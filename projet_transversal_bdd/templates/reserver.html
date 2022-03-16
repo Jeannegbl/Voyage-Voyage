@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block titre %}Réserver{% endblock %}
+
+{% block contenu %}
+<body class="fond-connexion-inscription">
+    <form class="connexion" method="POST">
+        <fieldset>
+            <p>Voulez-vous vraiment réserver pour le circuit {{circuit}} ?</p>
+            <p>Indiquez nous alors le nombre de personne</p>
+            {{ form.csrf_token }}
+            <div><label>Nombre de place</label>{{ form.place(size=20) }}</div>
+            <input type="submit" class="submit" value="Valider la réservation">
+            <input class="buttom" type="button" value="Retour" onclick="javascript:history.back(-1);">
+        </fieldset>
+    </form>
+</body>
+{% endblock %}
+{% block footer %}
+<footer class="footer footer-connexion-inscription">
+    <p class="copyright">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>
+</footer>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block titre %}{{nom_circuit}}{% endblock %}
+
+{% block contenu %}
+<div class="lieu">
+    <h1>{{nom_circuit}}</h1>
+    <p>{{description_circuit}}</p>
+    <p>{{prix_circuit}}€</p>
+    <p>Départ le {{date_circuit_debut}} à {{depart_circuit}} jusqu'au {{date_circuit_fin}} à {{arrivee_circuit}}</p>
+    {% for your_list_element in circuit_lieu %}
+    <div class="img-circuit">
+        <img onclick="window.location.href='circuit/{{your_list_element.1}}';" class="img-lieu" src={{your_list_element.0}}>
+        <a><figcaption>{{your_list_element.1}}</figcaption></a>
+    </div>
+    {% endfor %}
+    {% if reservation == "Réserver" %}
+        <input class="buttom" type="button" value="{{reservation}}" onclick="window.location.href='{{url_for('reserver')}}';">
+    {% endif %}
+    {% if reservation == "Inscription pour réserver" %}
+                <input class="buttom" type="button" value="{{reservation}}" onclick="window.location.href='{{url_for('creercompte')}}';">
+    {% endif %}
+    <input class="buttom" type="button" value="Retour" onclick="window.location.href='{{url_for('index')}}';">
+</div>
+{% endblock %}
+{% block footer %}
+<footer class="footer footer-connexion-inscription">
+    <p class="copyright">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>
+</footer>
+{% endblock %}
+
+

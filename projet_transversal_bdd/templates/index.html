@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="icon" href="https://www.zarla.com/images/zarla-voyage-voyage-1x1-2400x2400-20210604-pqmmqvwfy7pfkkxxf7mf.png?crop=1:1,smart&width=250&dpr=2">
+        <title>Voyage-Voyage</title>
+    </head>
+    <body>
+        <header class="header">
+            <a href="{{url_for('index')}}">
+                <img class="logo" src="https://www.zarla.com/images/zarla-voyage-voyage-1x1-2400x2400-20210604-pqmmqvwfy7pfkkxxf7mf.png?crop=1:1,smart&width=250&dpr=2">
+            </a>
+            <p class="welcome">{{pseudo}}</p>
+            <h1 class="titre-header">{% block titre %} voyage-voyage {% endblock %} </h1>
+            {% if pseudo %}
+                <input class="buttom button-header" type="button" value="Réservation" onclick="window.location.href='{{url_for('listereservation')}}';">
+            {% else %}
+                <input class="buttom button-header" type="button" value="Connexion" onclick="window.location.href='{{url_for('connexion')}}';">
+                <input class="buttom button-header button-header-bottom" type="button" value="Inscription" onclick="window.location.href='{{url_for('creercompte')}}';">
+            {% endif %}
+            <p class="profil-header"> menu </p>
+        </header>
+        {% block contenu %}
+        <section>
+                {% for element_liste_circuit in liste_circuit %}
+                <div class="container-circuit">
+                    <h2 class="titre-circuit">{{element_liste_circuit.0}}</h2>
+                    <p class="description-circuit">{{element_liste_circuit.1}}</p>
+                    <input class="buttom lieu" type="button" value="Détail" onclick="window.location.href='{{element_liste_circuit.0}}';">
+                </div>
+                {% endfor %}
+        </section>
+        {% endblock %}
+        {% block footer %}
+            <footer class="footer">
+                <p class="copyright">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>
+            </footer>
+        {% endblock %}
+    </body>
+</html>

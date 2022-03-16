@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block titre %}{{nom_lieu}}{% endblock %}
+
+{% block contenu %}
+<div class="lieu">
+    <h2>{{ville_lieu}} - {{pays_lieu}}</h2>
+    <p>{{description_lieu}}</p>
+    <p>{{prix_lieu}}€</p>
+    <img class="img-lieu" src={{url}}>
+    <input class="buttom" type="button" value="Retour" onclick="javascript:history.back(-1);">
+</div>
+{% endblock %}
+{% block footer %}
+<footer class="footer footer-connexion-inscription">
+    <p class="copyright">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>
+</footer>
+{% endblock %}

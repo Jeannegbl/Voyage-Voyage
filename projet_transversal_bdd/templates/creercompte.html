@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+
+{% block titre %}Créer un compte{% endblock %}
+
+{% block contenu %}
+<body class="fond-connexion-inscription">
+    <form class="inscription" method="POST">
+        <fieldset>
+            {{ form.csrf_token }}
+            <div><label>Nom du compte</label>{{ form.user(size=20) }}</div>
+            <div><label>Adresse mail</label>{{ form.mail(size=20) }}</div>
+            <div><label>Mot de passe</label>{{ form.mdp(size=20) }}</div>
+            <div><label>Nom</label>{{ form.nom(size=20) }}</div>
+            <div><label>Prénom</label>{{ form.prenom(size=20) }}</div>
+            <input type="submit" class="submit" value="Inscription">
+        </fieldset>
+    </form>
+</body>
+{% endblock %}
+{% block footer %}
+<footer class="footer footer-connexion-inscription">
+    <p class="copyright">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>
+</footer>
+{% endblock %}

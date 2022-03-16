@@ -1,0 +1,201 @@
+body{
+background-color: #d2d2d2;
+}
+.fond-connexion-inscription{
+background-image: url("https://files.macg.co/macgupload/1496758788-26394278821921.jpg");
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+}
+
+.image-fond{
+    top : 0vh;
+    width: 100vw;
+    height : 100vh;
+    position : fixed;
+    z-index: -1;
+}
+.titre{
+    text-align: center;
+    font-size: 10vh;
+    margin: 4vh;
+}
+.header{
+    height: 10vh;
+    width: 100vw;
+    background-color: #318ce7;
+    top: 0vh;
+    left: 0vw;
+    margin: 0%;
+    padding: 0%;
+    position: fixed;
+    z-index: 1;
+}
+.logo{
+height: 10vh;
+width: 10vh;
+left: 2vw;
+position: fixed;
+}
+.welcome{
+    height: 6vh;
+    top : 1vh;
+    left : 8vw;
+    font-size: 6vh;
+    position: fixed;
+    margin : 0%;
+}
+.titre-header{
+    height : 8vh;
+    font-size: 8vh;
+    top : 0vh;
+    position: fixed;
+    width: 40vw;
+    left: 30vw;
+    margin: 0%;
+    text-align: center;
+}
+.buttom{
+width: 104px;
+height: 23px;
+border-radius: 17px;
+background-color: white;
+color: black;
+border: 2px solid seagreen;
+}
+.buttom:hover{
+background-color:seagreen;
+color:white;
+}
+.button-header{
+position: relative;
+left: 150vh;
+top: 2vh;
+}
+.button-header-bottom{
+position: absolute;
+top: 5vh;
+}
+.profil-header{
+    height: 6vh;
+    top : 1vh;
+    right : 2vw;
+    font-size: 6vh;
+    position: fixed;
+    margin : 0%;
+}
+.container-circuit{
+    position: relative;
+    top : 30vh;
+    height : 80vh;
+    width : 80vw;
+    left : 10vw;
+    background-color: whitesmoke;
+    margin-bottom: 20vh;
+}
+.titre-circuit{
+    position :absolute;
+    height : 10vh;
+    width: 80vw;
+    text-align: center;
+    font-size: 7vh;
+    margin: 0;
+    left: 0vw;
+}
+.description-circuit{
+    position :absolute;
+    height : 10vh;
+    width: 80vw;
+    text-align: center;
+    font-size: 4vh;
+    margin: 0;
+    left: 0vw;
+    top : 10vh;  
+}
+
+
+
+fieldset{
+padding-bottom: 2vh;
+width: 55vh;
+background-color: lightblue;
+border: grey solid 1px;
+}
+.connexion{
+position: relative;
+margin: 35vh 65vh;
+font-size: 3vh;
+font-weight: bolder;
+}
+.inscription{
+position: relative;
+margin: 35vh 65vh;
+font-size: 3vh;
+font-weight: bolder;
+}
+label{
+text-align: left;
+display: inline-block;
+width: 10em;
+}
+input{
+height: 3vh;
+}
+.submit{
+position: relative;
+top: 1vh;
+left: 22vh;
+height: 30px;
+font-size: 15px;
+}
+
+
+.footer{
+height: 10vh;
+width: 100vw;
+background-color: #318ce7;
+bottom: auto;
+left: 0vw;
+margin: 0%;
+padding: 0%;
+position: absolute;
+z-index: 1;
+}
+.footer-connexion-inscription{
+bottom: 0;
+}
+
+.copyright{
+text-align: center;
+font-size: 2vh;
+margin: 4vh;
+}
+
+.lieu{
+position: relative;
+top: 200px;
+}
+
+.img-circuit{
+display: inline-block;
+}
+.img-lieu{
+height: 200px;
+cursor: pointer;
+}
+figcaption{
+text-align: center;
+}
+
+.liste{
+position: relative;
+font-size: 3vh;
+font-weight: bolder;
+width: auto;
+background-color: lightblue;
+border: transparent solid 1px;
+}
+
+.margin-top{
+margin-top: 30vh;
+}
