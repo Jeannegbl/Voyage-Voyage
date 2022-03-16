@@ -22,6 +22,10 @@ def index():
         return render_template('index.html', liste_circuit=index_circuit, pseudo=pseudo)
     else:
         return render_template('index.html', liste_circuit=index_circuit)
+@app.route('/deconnexion')
+def deconnexion():
+    del session['pseudo']
+    return redirect(url_for('index'))
 
 @app.route('/<circuit>')
 def circuit(circuit):

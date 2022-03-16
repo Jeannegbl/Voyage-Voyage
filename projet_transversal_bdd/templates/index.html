@@ -16,6 +16,7 @@
             <h1 class="titre-header">{% block titre %} voyage-voyage {% endblock %} </h1>
             {% if pseudo %}
                 <input class="buttom button-header" type="button" value="Réservation" onclick="window.location.href='{{url_for('listereservation')}}';">
+                <input class="buttom button-header button-header-bottom" type="button" value="Déconnexion" onclick="window.location.href='{{url_for('deconnexion')}}';">
             {% else %}
                 <input class="buttom button-header" type="button" value="Connexion" onclick="window.location.href='{{url_for('connexion')}}';">
                 <input class="buttom button-header button-header-bottom" type="button" value="Inscription" onclick="window.location.href='{{url_for('creercompte')}}';">
