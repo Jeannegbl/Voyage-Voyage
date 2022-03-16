@@ -55,6 +55,26 @@ position: fixed;
     margin: 0%;
     text-align: center;
 }
+.titre-header-circuit{
+height : 8vh;
+font-size: 6vh;
+top : 1vh;
+position: fixed;
+width: 50vw;
+left: 25vw;
+margin: 0%;
+text-align: center;
+}
+.titre-header-lieu{
+height : 8vh;
+font-size: 6vh;
+top : 1vh;
+position: fixed;
+width: 60vw;
+left: 20vw;
+margin: 0%;
+text-align: center;
+}
 .button{
 width: 104px;
 height: 23px;
@@ -69,20 +89,12 @@ color:white;
 }
 .button-header{
 position: fixed;
-left: 80vw;
+left: 90vw;
 top: 2vh;
 }
 .button-header-bottom{
 position: absolute;
 top: 5vh;
-}
-.profil-header{
-    height: 6vh;
-    top : 1vh;
-    right : 2vw;
-    font-size: 6vh;
-    position: fixed;
-    margin : 0%;
 }
 .container-circuit{
     position: relative;

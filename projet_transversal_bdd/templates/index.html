@@ -13,7 +13,7 @@
                 <img class="logo" src="{{ url_for('static', filename='logo.png') }}">
             </a>
             <p class="nom">{{pseudo}}</p>
-            <h1 class="titre-header">{% block titre %} voyage-voyage {% endblock %} </h1>
+            {% block titre %}<h1 class="titre-header">Voyage-Voyage</h1>{% endblock %}
             {% if pseudo %}
                 <input class="button button-header" type="button" value="Réservation" onclick="window.location.href='{{url_for('listereservation')}}';">
                 <input class="button button-header button-header-bottom" type="button" value="Déconnexion" onclick="window.location.href='{{url_for('deconnexion')}}';">
@@ -21,7 +21,6 @@
                 <input class="button button-header" type="button" value="Connexion" onclick="window.location.href='{{url_for('connexion')}}';">
                 <input class="button button-header button-header-bottom" type="button" value="Inscription" onclick="window.location.href='{{url_for('creercompte')}}';">
             {% endif %}
-            <p class="profil-header"> menu </p>
         </header>
         {% block contenu %}
         <section>
