@@ -1,10 +1,10 @@
 body{
 background-color: #d2d2d2;
+overflow-x: hidden;
 }
 .fond-connexion-inscription{
 background-image: url("https://files.macg.co/macgupload/1496758788-26394278821921.jpg");
 background-repeat: no-repeat;
-background-position: center;
 background-size: cover;
 }
 
@@ -37,7 +37,7 @@ width: 10vh;
 left: 2vw;
 position: fixed;
 }
-.welcome{
+.nom{
     height: 6vh;
     top : 1vh;
     left : 8vw;
@@ -55,7 +55,7 @@ position: fixed;
     margin: 0%;
     text-align: center;
 }
-.buttom{
+.button{
 width: 104px;
 height: 23px;
 border-radius: 17px;
@@ -63,13 +63,13 @@ background-color: white;
 color: black;
 border: 2px solid seagreen;
 }
-.buttom:hover{
+.button:hover{
 background-color:seagreen;
 color:white;
 }
 .button-header{
-position: relative;
-left: 150vh;
+position: fixed;
+left: 80vw;
 top: 2vh;
 }
 .button-header-bottom{
@@ -114,7 +114,6 @@ top: 5vh;
 }
 
 
-
 fieldset{
 padding-bottom: 2vh;
 width: 55vh;
@@ -123,15 +122,19 @@ border: grey solid 1px;
 }
 .connexion{
 position: relative;
-margin: 35vh 65vh;
+top : 30vh;
 font-size: 3vh;
 font-weight: bolder;
+display: flex;
+justify-content: center;
 }
 .inscription{
 position: relative;
-margin: 35vh 65vh;
+top : 30vh;
 font-size: 3vh;
 font-weight: bolder;
+display: flex;
+justify-content: center;
 }
 label{
 text-align: left;
@@ -163,6 +166,7 @@ z-index: 1;
 }
 .footer-connexion-inscription{
 bottom: 0;
+overflow-y: hidden;
 }
 
 .copyright{

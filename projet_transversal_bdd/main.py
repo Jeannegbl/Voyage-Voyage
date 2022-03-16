@@ -3,7 +3,7 @@ from flask import render_template
 import mysql.connector
 from mysql.connector import connect, Error
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
+from wtforms import StringField, PasswordField, DateField
 from wtforms.validators import DataRequired
 import bcrypt
 from database import Database
@@ -93,6 +93,7 @@ def creercompte():
         mdp = StringField('mdp', validators=[DataRequired()])
         nom = StringField('nom')
         prenom = StringField('prenom')
+        anniversaire = DateField('Start', format = '%Y-%m-%d')
     form = testform()
     if form.validate_on_submit():
         user = request.form['user']
@@ -100,13 +101,14 @@ def creercompte():
         mdp = request.form['mdp']
         nom = request.form['nom']
         prenom = request.form['prenom']
+        anniversaire = form.anniversaire.data.strftime('%Y-%m-%d')
         sel = bcrypt.gensalt()
         mdp = mdp.encode(encoding = 'UTF-8', errors = 'strict')
         mdpcrypter = bcrypt.hashpw(mdp, sel)
         connexion_unique = Database.Instance()
-        query_nouvelleutilisateur = "INSERT INTO utilisateur (role_admin, nom, prenom, login, email, mdp) VALUES " \
-                 "(%s, %s, %s, %s, %s, %s) "
-        connexion_unique.commit(query_nouvelleutilisateur, (0, nom, prenom, user, mail, mdpcrypter))
+        query_nouvelleutilisateur = "INSERT INTO utilisateur (role_admin, nom, prenom, date_naissance, login, email, mdp) VALUES " \
+                 "(%s, %s, %s, %s, %s, %s, %s) "
+        connexion_unique.commit(query_nouvelleutilisateur, (0, nom, prenom, anniversaire, user, mail, mdpcrypter))
         return redirect(url_for('connexion'))
     return render_template('/creercompte.html', form=form)
 
@@ -115,7 +117,7 @@ def creercompte():
 def connexion():
     class connexionform(FlaskForm):
         user = StringField('user', validators=[DataRequired()])
-        mdp = StringField('mdp', validators=[DataRequired()])
+        mdp = PasswordField('mdp', validators=[DataRequired()])
     form = connexionform()
     if form.validate_on_submit():
         user = request.form['user']

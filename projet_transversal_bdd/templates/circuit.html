@@ -15,12 +15,12 @@
     </div>
     {% endfor %}
     {% if reservation == "Réserver" %}
-        <input class="buttom" type="button" value="{{reservation}}" onclick="window.location.href='{{url_for('reserver')}}';">
+        <input class="button" type="button" value="{{reservation}}" onclick="window.location.href='{{url_for('reserver')}}';">
     {% endif %}
     {% if reservation == "Inscription pour réserver" %}
-                <input class="buttom" type="button" value="{{reservation}}" onclick="window.location.href='{{url_for('creercompte')}}';">
+                <input class="button" type="button" value="{{reservation}}" onclick="window.location.href='{{url_for('creercompte')}}';">
     {% endif %}
-    <input class="buttom" type="button" value="Retour" onclick="window.location.href='{{url_for('index')}}';">
+    <input class="button" type="button" value="Retour" onclick="window.location.href='{{url_for('index')}}';">
 </div>
 {% endblock %}
 {% block footer %}

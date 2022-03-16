@@ -12,14 +12,14 @@
             <a href="{{url_for('index')}}">
                 <img class="logo" src="{{ url_for('static', filename='logo.png') }}">
             </a>
-            <p class="welcome">{{pseudo}}</p>
+            <p class="nom">{{pseudo}}</p>
             <h1 class="titre-header">{% block titre %} voyage-voyage {% endblock %} </h1>
             {% if pseudo %}
-                <input class="buttom button-header" type="button" value="Réservation" onclick="window.location.href='{{url_for('listereservation')}}';">
-                <input class="buttom button-header button-header-bottom" type="button" value="Déconnexion" onclick="window.location.href='{{url_for('deconnexion')}}';">
+                <input class="button button-header" type="button" value="Réservation" onclick="window.location.href='{{url_for('listereservation')}}';">
+                <input class="button button-header button-header-bottom" type="button" value="Déconnexion" onclick="window.location.href='{{url_for('deconnexion')}}';">
             {% else %}
-                <input class="buttom button-header" type="button" value="Connexion" onclick="window.location.href='{{url_for('connexion')}}';">
-                <input class="buttom button-header button-header-bottom" type="button" value="Inscription" onclick="window.location.href='{{url_for('creercompte')}}';">
+                <input class="button button-header" type="button" value="Connexion" onclick="window.location.href='{{url_for('connexion')}}';">
+                <input class="button button-header button-header-bottom" type="button" value="Inscription" onclick="window.location.href='{{url_for('creercompte')}}';">
             {% endif %}
             <p class="profil-header"> menu </p>
         </header>
@@ -29,7 +29,7 @@
                 <div class="container-circuit">
                     <h2 class="titre-circuit">{{element_liste_circuit.0}}</h2>
                     <p class="description-circuit">{{element_liste_circuit.1}}</p>
-                    <input class="buttom lieu" type="button" value="Détail" onclick="window.location.href='{{element_liste_circuit.0}}';">
+                    <input class="button lieu" type="button" value="Détail" onclick="window.location.href='{{element_liste_circuit.0}}';">
                 </div>
                 {% endfor %}
         </section>
