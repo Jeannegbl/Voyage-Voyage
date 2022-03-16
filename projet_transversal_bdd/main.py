@@ -3,7 +3,7 @@ from flask import render_template
 import mysql.connector
 from mysql.connector import connect, Error
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, DateField
+from wtforms import StringField, PasswordField, DateField, EmailField
 from wtforms.validators import DataRequired
 import bcrypt
 from database import Database
@@ -89,7 +89,7 @@ def lieu(lieu):
 def creercompte():
     class testform(FlaskForm):
         user = StringField('user', validators=[DataRequired()])
-        mail = StringField('mail', validators=[DataRequired()])
+        mail = EmailField('mail', validators=[DataRequired()])
         mdp = StringField('mdp', validators=[DataRequired()])
         nom = StringField('nom')
         prenom = StringField('prenom')
