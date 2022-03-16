@@ -40,7 +40,7 @@ def circuit(circuit):
     depart_circuit = connexion_unique.query_for2_3(query_nomdepart)
     query_nomarrivee = "SELECT arrivee.nom FROM `circuit` JOIN ville AS arrivee ON circuit.ville_arrivee = arrivee.id JOIN etape ON circuit.id = etape.id_circuit WHERE circuit.nom = '%s' " %circuit
     arrivee_circuit = connexion_unique.query_for2_3(query_nomarrivee)
-    query_img_lieucircuit ="SELECT image.url, lieu.label from image join lieu ON lieu.id = image.id_lieu JOIN etape ON etape.id_lieu = lieu.id JOIN circuit ON etape.id_circuit = circuit.id WHERE circuit.nom = '%s' GROUP BY lieu.id " % circuit
+    query_img_lieucircuit ="SELECT DISTINCT image.url, lieu.label from image join lieu ON lieu.id = image.id_lieu JOIN etape ON etape.id_lieu = lieu.id JOIN circuit ON etape.id_circuit = circuit.id WHERE circuit.nom = '%s' GROUP BY etape.ordre " % circuit
     circuit_lieu = connexion_unique.fetchall_simple(query_img_lieucircuit)
     reservation = "Inscription pour réserver"
     query_idcircuit = "SELECT id FROM circuit WHERE circuit.nom = '%s' " % circuit
