@@ -4,13 +4,13 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-        <link rel="icon" href="https://www.zarla.com/images/zarla-voyage-voyage-1x1-2400x2400-20210604-pqmmqvwfy7pfkkxxf7mf.png?crop=1:1,smart&width=250&dpr=2">
+        <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
         <title>Voyage-Voyage</title>
     </head>
     <body>
         <header class="header">
             <a href="{{url_for('index')}}">
-                <img class="logo" src="https://www.zarla.com/images/zarla-voyage-voyage-1x1-2400x2400-20210604-pqmmqvwfy7pfkkxxf7mf.png?crop=1:1,smart&width=250&dpr=2">
+                <img class="logo" src="{{ url_for('static', filename='logo.png') }}">
             </a>
             <p class="welcome">{{pseudo}}</p>
             <h1 class="titre-header">{% block titre %} voyage-voyage {% endblock %} </h1>
