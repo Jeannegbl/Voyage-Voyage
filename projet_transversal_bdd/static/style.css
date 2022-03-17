@@ -7,7 +7,11 @@ background-image: url("https://files.macg.co/macgupload/1496758788-2639427882192
 background-repeat: no-repeat;
 background-size: cover;
 }
-
+.img{
+background-image: url("https://www.mylittleroad.com/wp-content/uploads/2015/10/avion-hublot-1024x700.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+}
 .image-fond{
 top : 0vh;
 width: 100vw;
