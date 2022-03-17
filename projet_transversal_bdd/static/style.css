@@ -87,6 +87,12 @@ color: black;
 border: 2px solid seagreen;
 font-size: 14px;
 }
+.bouton-index{
+position: relative;
+top: 30vh;
+display: block;
+margin: auto;
+}
 .bouton:hover{
 background-color: seagreen;
 color:white;
@@ -100,7 +106,7 @@ top: 2vh;
 position: absolute;
 top: 5vh;
 }
-.bouton-inscription-réserver{
+.bouton-width-auto{
 width : auto;
 }
 .bouton-rouge{
@@ -151,7 +157,7 @@ right: 0;
 .contenu-circuit{
 position: relative;
 top : 30vh;
-height : 30vh;
+height : 40vh;
 width : 80vw;
 left : 10vw;
 background-color: whitesmoke;
