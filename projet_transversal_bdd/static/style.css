@@ -7,11 +7,7 @@ background-image: url("https://files.macg.co/macgupload/1496758788-2639427882192
 background-repeat: no-repeat;
 background-size: cover;
 }
-.img{
-background-image: url("https://www.mylittleroad.com/wp-content/uploads/2015/10/avion-hublot-1024x700.jpg");
-background-repeat: no-repeat;
-background-size: cover;
-}
+
 .image-fond{
 top : 0vh;
 width: 100vw;
@@ -152,14 +148,17 @@ right: 0;
 }
 
 
-.container-circuit{
+.contenu-circuit{
 position: relative;
 top : 30vh;
-height : 80vh;
+height : 30vh;
 width : 80vw;
 left : 10vw;
 background-color: whitesmoke;
 margin-bottom: 20vh;
+background-image: url("https://images.unsplash.com/photo-1499346030926-9a72daac6c63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80");
+background-repeat: round;
+background-size: cover;
 }
 .titre-circuit{
 position :absolute;
@@ -216,15 +215,11 @@ height: 3vh;
 
 
 .footer{
-height: 10vh;
+margin-top: 10vw;
 width: 100vw;
 background-color: #318ce7;
-bottom: auto;
-left: 0vw;
-margin: 0%;
-padding: 0%;
+left: 0;
 position: absolute;
-z-index: 1;
 }
 .footer-connexion-inscription{
 bottom: 0;

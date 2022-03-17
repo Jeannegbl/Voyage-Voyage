@@ -25,7 +25,7 @@
         {% block contenu %}
         <section>
                 {% for element_liste_circuit in liste_circuit %}
-                <div class="container-circuit img">
+                <div class="contenu-circuit img">
                     <h2 class="titre-circuit">{{element_liste_circuit.0}}</h2>
                     <p class="description-circuit">{{element_liste_circuit.1}}</p>
                     <input class="bouton lieu" type="button" value="Détail" onclick="window.location.href='{{element_liste_circuit.0}}';">
