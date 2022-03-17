@@ -175,7 +175,7 @@ font-size: 7vh;
 margin: 0;
 left: 0vw;
 }
-.description-circuit{
+.description-index{
 position :absolute;
 height : 10vh;
 width: 80vw;
@@ -185,6 +185,16 @@ margin: 0;
 left: 0vw;
 top : 10vh;
 }
+.titre-circuit-lieu{
+text-align: center;
+font-size: 4vh;
+}
+.lieu{
+position: relative;
+top: 15vh;
+background-color: whitesmoke;
+}
+
 
 
 fieldset{
@@ -238,10 +248,7 @@ font-size: 2vh;
 margin: 4vh;
 }
 
-.lieu{
-position: relative;
-top: 200px;
-}
+
 
 .img-circuit{
 display: inline-block;

@@ -27,7 +27,7 @@
                 {% for element_liste_circuit in liste_circuit %}
                 <div class="contenu-circuit">
                     <h2 class="titre-circuit">{{element_liste_circuit.0}}</h2>
-                    <p class="description-circuit">{{element_liste_circuit.1}}</p>
+                    <p class="description-index">{{element_liste_circuit.1}}</p>
                     <input class="bouton bouton-index bouton-width-auto" type="button" value="Plus d'information" onclick="window.location.href='{{element_liste_circuit.0}}';">
                 </div>
                 {% endfor %}

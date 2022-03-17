@@ -5,9 +5,9 @@
 
 {% block contenu %}
 <div class="lieu">
-    <h2>{{ville_lieu}} - {{pays_lieu}}</h2>
-    <p>{{description_lieu}}</p>
-    <p>{{prix_lieu}}€</p>
+    <h2 class="titre-circuit-lieu">{{ville_lieu}} - {{pays_lieu}}</h2>
+    <p class="description-lieu">{{description_lieu}}</p>
+    <p class="prix-lieu">{{prix_lieu}}€</p>
     <img class="img-lieu" src={{url}}>
     <input class="bouton" type="button" value="Retour" onclick="javascript:history.back(-1);">
 </div>
