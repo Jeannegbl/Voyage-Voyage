@@ -3,7 +3,7 @@ from flask import render_template
 import mysql.connector
 from mysql.connector import connect, Error
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, DateField, EmailField
+from wtforms import StringField, PasswordField, DateField, EmailField, SelectField
 from wtforms.validators import DataRequired
 import bcrypt
 from database import Database
@@ -87,14 +87,14 @@ def lieu(lieu):
 
 @app.route('/creercompte', methods=['GET', 'POST'])
 def creercompte():
-    class testform(FlaskForm):
+    class inscriptionform(FlaskForm):
         user = StringField('user', validators=[DataRequired()])
         mail = EmailField('mail', validators=[DataRequired()])
         mdp = StringField('mdp', validators=[DataRequired()])
         nom = StringField('nom')
         prenom = StringField('prenom')
         anniversaire = DateField('Start', format = '%Y-%m-%d')
-    form = testform()
+    form = inscriptionform()
     if form.validate_on_submit():
         user = request.form['user']
         mail = request.form['mail']
