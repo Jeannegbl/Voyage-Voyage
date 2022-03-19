@@ -119,6 +119,13 @@ background-color: #CF1111;
 position: sticky;
 left: 60vw;
 }
+.bouton-circuit{
+margin: auto;
+position: relative;
+}
+.bouton-retour{
+left: 65vw;
+}
 .envoyer{
 position: relative;
 top: 1vh;
@@ -259,17 +266,19 @@ background-color: white;
 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 margin-bottom: 25px;
 border: 1px solid transparent;
+position: relative;
+left: 10vw;
 }
 .img-circuit:hover{
 border: 1px solid #777;
 }
 .img-lieu{
-height: 200px;
+height: 20vh;
 cursor: pointer;
 }
 figcaption{
 text-align: center;
-padding: 10px 20px;
+padding: 1vh 0 1vh 0;
 }
 
 .liste{

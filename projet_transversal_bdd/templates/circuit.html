@@ -13,13 +13,15 @@
         <figcaption>{{your_list_element.1}}</figcaption>
     </div>
     {% endfor %}
+    <div>
     {% if reservation == "Réserver" %}
-        <input class="bouton" type="button" value="{{reservation}}" onclick="window.location.href='{{url_for('reserver')}}';">
+        <input class="bouton bouton-circuit" type="button" value="{{reservation}}" onclick="window.location.href='{{url_for('reserver')}}';">
     {% endif %}
     {% if reservation == "Inscription pour réserver" %}
-                <input class="bouton bouton-width-auto" type="button" value="{{reservation}}" onclick="window.location.href='{{url_for('creercompte')}}';">
+                <input class="bouton bouton-circuit bouton-width-auto" type="button" value="{{reservation}}" onclick="window.location.href='{{url_for('creercompte')}}';">
     {% endif %}
-    <input class="bouton" type="button" value="Retour" onclick="window.location.href='{{url_for('index')}}';">
+    <input class="bouton bouton-circuit bouton-retour" type="button" value="Retour" onclick="window.location.href='{{url_for('index')}}';">
+    </div>
 </div>
 {% endblock %}
 {% block footer %}
