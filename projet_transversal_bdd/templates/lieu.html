@@ -6,7 +6,11 @@
 {% block contenu %}
 <div class="contenu-circuit-lieu contenu-lieu" style="background-image:url({{url}});">
     <h2 class="titre-circuit-lieu titre-lieu">{{ville_lieu}}<br>{{pays_lieu}}</h2>
-    <p class="description-lieu">{{description_lieu}}<br><br>{{prix_lieu}} €</p>
+    {% if prix_lieu == "0" %}
+        <p class="description-lieu">{{description_lieu}}<br><br>Gratuit</p>
+    {% else %}
+        <p class="description-lieu">{{description_lieu}}<br><br>{{prix_lieu}} €</p>
+    {% endif %}
     <input class="bouton bouton-retour-lieu" type="button" value="Retour" onclick="javascript:history.back(-1);">
 </div>
 {% endblock %}

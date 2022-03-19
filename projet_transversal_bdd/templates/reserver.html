@@ -10,9 +10,11 @@
             <p>Voulez-vous vraiment réserver pour le circuit {{circuit}} ?</p>
             <p>Indiquez nous alors le nombre de personne</p>
             {{ form.csrf_token }}
-            <div><label>Nombre de place</label>{{ form.place(size=20) }}</div>
-            <button class="envoyer envoyer-réservation" type="submit"><span>Valider la réservation</span> </button>
-            <input class="bouton bouton-annulation bouton-rouge" type="button" value="Annuler" onclick="javascript:history.back(-1);">
+            <div class="nb-place"><label>Nombre de place</label>{{ form.place(size=20) }}</div>
+            <div class="space-between non-padding">
+                <button class="envoyer envoyer-réservation" type="submit"><span>Valider la réservation</span> </button>
+                <input class="bouton bouton-annulation bouton-rouge" type="button" value="Annuler" onclick="javascript:history.back(-1);">
+            </div>
         </fieldset>
     </form>
 </body>

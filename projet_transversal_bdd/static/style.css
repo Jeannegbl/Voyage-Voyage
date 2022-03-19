@@ -26,8 +26,6 @@ width: 100vw;
 background-color: #318ce7;
 top: 0vh;
 left: 0vw;
-margin: 0;
-padding: 0;
 position: fixed;
 z-index: 1;
 }
@@ -38,7 +36,6 @@ left: 2vw;
 position: fixed;
 }
 .nom{
-height: 6vh;
 top : 1vh;
 left : 8vw;
 font-size: 6vh;
@@ -46,12 +43,7 @@ position: fixed;
 margin : 0;
 }
 .titre-header{
-height : 8vh;
 font-size: 8vh;
-top : 0vh;
-position: fixed;
-width: 40vw;
-left: 30vw;
 margin: 0;
 text-align: center;
 }
@@ -120,7 +112,7 @@ position: sticky;
 left: 60vw;
 }
 .bouton-retour-lieu{
-top: 20vw;
+top: 38vh;
 position: absolute;
 height: 2vw;
 left: 2vw;
@@ -166,41 +158,33 @@ top : 30vh;
 height : 40vh;
 width : 80vw;
 left : 10vw;
-background-color: whitesmoke;
 margin-bottom: 20vh;
 background-image: url("https://images.unsplash.com/photo-1499346030926-9a72daac6c63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80");
 background-repeat: round;
-background-size: cover;
 }
 .titre-circuit{
-position :absolute;
-height : 10vh;
+height: 0;
 width: 80vw;
 text-align: center;
 font-size: 7vh;
 margin: 0;
-left: 0;
 }
 .description-index{
 position :absolute;
-height : 10vh;
 width: 80vw;
 text-align: center;
 font-size: 4vh;
 margin: 0;
-left: 0;
 top : 10vh;
 }
 .description-lieu{
 width: 30vw;
-text-align: center;
 top: 7vw;
 position: absolute;
 font-size: 2vh;
 margin-left: 4vw;
 }
 .titre-circuit-lieu{
-text-align: center;
 font-size: 4vh;
 }
 .titre-lieu{
@@ -215,17 +199,16 @@ width: 80vw;
 left: 10vw;
 }
 .contenu-lieu{
-height: 24vw;
+height: 45vh;
 background-repeat: no-repeat;
 background-position: right;
 background-size: contain;
+text-align: center;
 }
 
 
 
 fieldset{
-padding-bottom: 2vh;
-width: 55vh;
 background-color: lightblue;
 border: grey solid 1px;
 }
@@ -246,7 +229,6 @@ display: flex;
 justify-content: center;
 }
 label{
-text-align: left;
 display: inline-block;
 width: 10em;
 }
@@ -292,16 +274,13 @@ height: 20vh;
 cursor: pointer;
 }
 figcaption{
-text-align: center;
 padding: 1vh 0 1vh 0;
 font-size: 16px;
 }
 
 .liste{
-position: relative;
 font-size: 3vh;
 font-weight: bolder;
-width: auto;
 background-color: lightblue;
 border: transparent solid 1px;
 }
@@ -316,4 +295,11 @@ font-size: 2vh;
 .space-between{
 display: flex;
 justify-content: space-between;
+padding: 0 15px 15px 15px;
+}
+.non-padding{
+padding: initial;
+}
+.nb-place{
+text-align: center;
 }
