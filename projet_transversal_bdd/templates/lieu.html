@@ -4,12 +4,10 @@
 
 
 {% block contenu %}
-<div class="contenu-circuit-lieu">
-    <h2 class="titre-circuit-lieu">{{ville_lieu}} - {{pays_lieu}}</h2>
-    <p class="description-lieu">{{description_lieu}}</p>
-    <p class="prix-lieu">{{prix_lieu}}€</p>
-    <img class="img-lieu" src={{url}}>
-    <input class="bouton" type="button" value="Retour" onclick="javascript:history.back(-1);">
+<div class="contenu-circuit-lieu contenu-lieu" style="background-image:url({{url}});">
+    <h2 class="titre-circuit-lieu titre-lieu">{{ville_lieu}}<br>{{pays_lieu}}</h2>
+    <p class="description-lieu">{{description_lieu}}<br><br>{{prix_lieu}} €</p>
+    <input class="bouton bouton-retour-lieu" type="button" value="Retour" onclick="javascript:history.back(-1);">
 </div>
 {% endblock %}
 {% block footer %}

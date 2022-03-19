@@ -124,7 +124,16 @@ margin: auto;
 position: relative;
 }
 .bouton-retour{
+left: 60vw;
+}
+.bouton-circuit-connecter{
 left: 65vw;
+}
+.bouton-retour-lieu{
+top: 20vw;
+position: absolute;
+height: 2vw;
+left: 2vw;
 }
 .envoyer{
 position: relative;
@@ -192,16 +201,34 @@ margin: 0;
 left: 0vw;
 top : 10vh;
 }
+.description-lieu{
+width: 30vw;
+text-align: center;
+top: 7vw;
+position: absolute;
+font-size: 2vh;
+margin-left: 4vw;
+}
 .titre-circuit-lieu{
 text-align: center;
 font-size: 4vh;
 }
+.titre-lieu{
+width: 30vw;
+margin-left: 4vw;
+}
 .contenu-circuit-lieu{
 position: relative;
-top: 15vh;
+top: 20vh;
 background-color: whitesmoke;
 width: 80vw;
 left: 10vw;
+}
+.contenu-lieu{
+height: 24vw;
+background-repeat: no-repeat;
+background-position: right;
+background-size: contain;
 }
 
 
@@ -266,8 +293,6 @@ background-color: white;
 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 margin-bottom: 25px;
 border: 1px solid transparent;
-position: relative;
-left: 10vw;
 }
 .img-circuit:hover{
 border: 1px solid #777;
