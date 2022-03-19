@@ -85,7 +85,7 @@ border-radius: 17px;
 background-color: white;
 color: black;
 border: 2px solid seagreen;
-font-size: 14px;
+font-size: 1.6vh;
 }
 .bouton-index{
 position: relative;
@@ -124,7 +124,7 @@ position: relative;
 top: 1vh;
 left: 22vh;
 height: 30px;
-font-size: 15px;
+font-size: 1.6vh;
 border-radius: 17px;
 border: 1px solid grey;
 }
@@ -189,10 +189,12 @@ top : 10vh;
 text-align: center;
 font-size: 4vh;
 }
-.lieu{
+.contenu-circuit-lieu{
 position: relative;
 top: 15vh;
 background-color: whitesmoke;
+width: 80vw;
+left: 10vw;
 }
 
 
@@ -252,6 +254,14 @@ margin: 4vh;
 
 .img-circuit{
 display: inline-block;
+width: min-content;
+background-color: white;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+margin-bottom: 25px;
+border: 1px solid transparent;
+}
+.img-circuit:hover{
+border: 1px solid #777;
 }
 .img-lieu{
 height: 200px;
@@ -259,6 +269,7 @@ cursor: pointer;
 }
 figcaption{
 text-align: center;
+padding: 10px 20px;
 }
 
 .liste{

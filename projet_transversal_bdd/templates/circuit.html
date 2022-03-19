@@ -3,14 +3,14 @@
 {% block titre %}<h1 class="titre-header-circuit">{{nom_circuit}}</h1>{% endblock %}
 
 {% block contenu %}
-<div class="lieu">
+<div class="contenu-circuit-lieu">
     <h2 class="titre-circuit-lieu">{{description_circuit}}</h2>
     <p class="date-circuit">Départ le {{date_circuit_debut}} à {{depart_circuit}} jusqu'au {{date_circuit_fin}} à {{arrivee_circuit}}</p>
     <p class="prix-circuit">{{prix_circuit}} €</p>
     {% for your_list_element in circuit_lieu %}
     <div class="img-circuit">
         <img onclick="window.location.href='circuit/{{your_list_element.1}}';" class="img-lieu" src={{your_list_element.0}}>
-        <a><figcaption>{{your_list_element.1}}</figcaption></a>
+        <figcaption>{{your_list_element.1}}</figcaption>
     </div>
     {% endfor %}
     {% if reservation == "Réserver" %}
