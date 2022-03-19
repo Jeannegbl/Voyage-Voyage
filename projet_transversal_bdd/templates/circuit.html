@@ -4,24 +4,26 @@
 
 {% block contenu %}
 <div class="contenu-circuit-lieu">
-    <h2 class="titre-circuit-lieu">{{description_circuit}}</h2>
-    <p class="date-circuit">Départ le {{date_circuit_debut}} à {{depart_circuit}} jusqu'au {{date_circuit_fin}} à {{arrivee_circuit}}</p>
-    <p class="prix-circuit">{{prix_circuit}} €</p>
-    <p> Les lieux que vous allez découvrir dans ce circuit : </p>
-    {% for your_list_element in circuit_lieu %}
-    <div class="img-circuit">
-        <img onclick="window.location.href='circuit/{{your_list_element.1}}';" class="img-lieu" src={{your_list_element.0}}>
-        <figcaption>{{your_list_element.1}}</figcaption>
+    <div class="texte-circuit">
+        <h2 class="titre-circuit-lieu">{{description_circuit}}</h2>
+        <p class="date-circuit">Départ le {{date_circuit_debut}} à {{depart_circuit}} jusqu'au {{date_circuit_fin}} à {{arrivee_circuit}}</p>
+        <p> Les lieux que vous allez découvrir dans ce circuit : </p>
+        {% for your_list_element in circuit_lieu %}
+        <div class="img-circuit">
+            <img onclick="window.location.href='circuit/{{your_list_element.1}}';" class="img-lieu" src={{your_list_element.0}}>
+            <figcaption>{{your_list_element.1}}</figcaption>
+        </div>
+        {% endfor %}
+        <p class="prix-circuit">{{prix_circuit}} €</p>
     </div>
-    {% endfor %}
-    <div>
+    <div class="space-between">
         {% if reservation == "Réserver" %}
-            <input class="bouton bouton-circuit" type="button" value="{{reservation}}" onclick="window.location.href='{{url_for('reserver')}}';">
-            <input class="bouton bouton-circuit bouton-retour bouton-circuit-connecter" type="button" value="Retour" onclick="window.location.href='{{url_for('index')}}';">
+            <input class="bouton" type="button" value="{{reservation}}" onclick="window.location.href='{{url_for('reserver')}}';">
+            <input class="bouton" type="button" value="Retour" onclick="window.location.href='{{url_for('index')}}';">
         {% endif %}
         {% if reservation == "Inscription pour réserver" %}
-            <input class="bouton bouton-circuit bouton-width-auto" type="button" value="{{reservation}}" onclick="window.location.href='{{url_for('creercompte')}}';">
-            <input class="bouton bouton-circuit bouton-retour" type="button" value="Retour" onclick="window.location.href='{{url_for('index')}}';">
+            <input class="bouton bouton-width-auto" type="button" value="{{reservation}}" onclick="window.location.href='{{url_for('creercompte')}}';">
+            <input class="bouton" type="button" value="Retour" onclick="window.location.href='{{url_for('index')}}';">
         {% endif %}
     </div>
 </div>

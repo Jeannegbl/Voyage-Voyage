@@ -9,7 +9,7 @@ background-size: cover;
 }
 
 .image-fond{
-top : 0vh;
+top : 0;
 width: 100vw;
 height : 100vh;
 position : fixed;
@@ -26,8 +26,8 @@ width: 100vw;
 background-color: #318ce7;
 top: 0vh;
 left: 0vw;
-margin: 0%;
-padding: 0%;
+margin: 0;
+padding: 0;
 position: fixed;
 z-index: 1;
 }
@@ -43,7 +43,7 @@ top : 1vh;
 left : 8vw;
 font-size: 6vh;
 position: fixed;
-margin : 0%;
+margin : 0;
 }
 .titre-header{
 height : 8vh;
@@ -52,7 +52,7 @@ top : 0vh;
 position: fixed;
 width: 40vw;
 left: 30vw;
-margin: 0%;
+margin: 0;
 text-align: center;
 }
 .titre-header-circuit{
@@ -62,7 +62,7 @@ top : 1vh;
 position: fixed;
 width: 50vw;
 left: 25vw;
-margin: 0%;
+margin: 0;
 text-align: center;
 }
 .titre-header-lieu{
@@ -72,7 +72,7 @@ top : 1vh;
 position: fixed;
 width: 60vw;
 left: 20vw;
-margin: 0%;
+margin: 0;
 text-align: center;
 }
 
@@ -118,16 +118,6 @@ background-color: #CF1111;
 .bouton-annulation{
 position: sticky;
 left: 60vw;
-}
-.bouton-circuit{
-margin: auto;
-position: relative;
-}
-.bouton-retour{
-left: 60vw;
-}
-.bouton-circuit-connecter{
-left: 65vw;
 }
 .bouton-retour-lieu{
 top: 20vw;
@@ -189,7 +179,7 @@ width: 80vw;
 text-align: center;
 font-size: 7vh;
 margin: 0;
-left: 0vw;
+left: 0;
 }
 .description-index{
 position :absolute;
@@ -198,7 +188,7 @@ width: 80vw;
 text-align: center;
 font-size: 4vh;
 margin: 0;
-left: 0vw;
+left: 0;
 top : 10vh;
 }
 .description-lieu{
@@ -304,6 +294,7 @@ cursor: pointer;
 figcaption{
 text-align: center;
 padding: 1vh 0 1vh 0;
+font-size: 16px;
 }
 
 .liste{
@@ -317,4 +308,12 @@ border: transparent solid 1px;
 
 .margin-top{
 margin-top: 30vh;
+}
+.texte-circuit{
+text-align: center;
+font-size: 2vh;
+}
+.space-between{
+display: flex;
+justify-content: space-between;
 }

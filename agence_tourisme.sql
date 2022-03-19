@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : sam. 19 mars 2022 à 18:46
+-- Généré le : sam. 19 mars 2022 à 21:43
 -- Version du serveur :  10.3.34-MariaDB-0ubuntu0.20.04.1
 -- Version de PHP : 7.4.3
 
@@ -51,7 +51,7 @@ INSERT INTO `circuit` (`id`, `nom`, `descriptif`, `prix_circuit`, `duree_jour`, 
 (3, 'Tour Espagnol', 'Découvrez l\'Espagne à travers ce tour unique, et vivez une experience hors du commun', 400, 4, 8, 11, 50, '2022-05-11', '2022-05-15'),
 (4, 'This is America', 'Venez découvrir le pays de l\'Oncle Sam à travers un circuit parsemé d\'expérience unique et de lieux atypiques', 2500, 15, 7, 13, 30, '2022-05-11', '2022-05-26'),
 (5, 'Italie comme jamais vu', 'Venez découvrir ce pays chargé d\'histoire et de culture. Nous vous proposeront de visiter les lieux incontournables et de déguster les spécialitées locales.', 500, 4, 5, 16, 6, '2022-03-02', '2022-03-06'),
-(6, 'Le pays du soleil levant', 'Voyagez à travers le Japon et découvrez les richesses de sa culture et de son mode de vie. Durant ce circuit, nous vous proposeront de visiter les plus beaux endroits du pays et de déguster les spécialitées.', 9000, 20, 4, 14, 40, '2022-06-09', '2022-06-29'),
+(6, 'Le pays du soleil levant', 'Voyagez à travers le Japon et découvrez les richesses de sa culture et de son mode de vie.', 9000, 20, 4, 14, 40, '2022-06-09', '2022-06-29'),
 (7, 'Tour de Nouvelle-Zélande ', 'Découvrez les paysages grandioses de ce pays unique à travers un tour vous proposant de visiter les lieux incontournables.', 8000, 12, 6, 15, 50, '2022-04-06', '2022-04-18');
 
 -- --------------------------------------------------------
