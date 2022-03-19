@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mer. 16 mars 2022 à 14:26
+-- Généré le : sam. 19 mars 2022 à 18:46
 -- Version du serveur :  10.3.34-MariaDB-0ubuntu0.20.04.1
 -- Version de PHP : 7.4.3
 
@@ -120,7 +120,7 @@ INSERT INTO `image` (`id`, `id_lieu`, `url`) VALUES
 (8, 10, 'https://www.newzealand.com/assets/Operator-Database/img-1633906214-1424-1141-tnz-hero__aWxvdmVrZWxseQo_CropResizeWzk0MCw1MzAsNzUsImpwZyJd.jpg'),
 (9, 11, 'https://upload.wikimedia.org/wikipedia/commons/5/52/Sagrada_Fam%C3%ADlia._Fa%C3%A7ana_del_Naixement_%28cropped%29.jpg'),
 (10, 12, 'https://www.canadatrip.fr/images/mont-royal.jpg'),
-(11, 15, 'https://estaticos.esmadrid.com/cdn/farfuture/nldtTlfQcQlA0xrodWcdVhLDu0vy8y7w2anxSeBmlYA/mtime:1586255274/sites/default/files/recursosturisticos/infoturistica/f_i_pg_111009_puerta_sol_-1.jpg'),
+(11, 15, 'https://d3ipks40p8ekbx.cloudfront.net/dam/jcr:b71591c8-5f8c-4fb2-a4d6-932aa2ec68e7/490x373_Madrid_Puerta%20del%20Sol-min-min.jpg'),
 (12, 16, 'https://voyages.topexpos.fr/wp-content/uploads/2017/12/the-fish-market-restaurant-ottawa-930x618.jpg'),
 (13, 17, 'https://cdn2.civitatis.com/estados-unidos/los-angeles/galeria/detalle-paseo-fama.jpg'),
 (14, 18, 'https://upload.wikimedia.org/wikipedia/commons/e/ec/Kumamoto_Castle_05n3200.jpg'),
@@ -160,7 +160,7 @@ INSERT INTO `lieu` (`id`, `id_ville`, `label`, `description`, `prix_visite`) VAL
 (15, 11, 'Puerta del Sol', 'La Puerta del Sol est située au cœur de Madrid, dans l\'arrondissement du Centre, à 800 m à l\'est du Palais royal et au nord-est de la Plaza Mayor.', 0),
 (16, 12, 'Marche By', 'Le Marché By est un quartier animé qui accueille des marchés fermiers en plein air et des épiceries spécialisées vendant du fromage canadien et du chocolat infusé à l\'érable. Il est également connu pour son art de rue coloré et ses magasins branchés proposant de l\'artisanat et des vêtements de créateurs locaux. ', 0),
 (17, 13, 'Hollywood Boulevard', 'Hollywood Boulevard est l’une des plus célèbres avenues du quartier de Hollywood, dans la ville américaine de Los Angeles en Californie. Haut lieu du tourisme de la ville, le boulevard s\'étend d\'Est en Ouest de Vermont Avenue jusqu\'à Sunset Boulevard.', 0),
-(18, 14, 'Château de Kumamoto', 'Le château de Kumamoto est un château en hauteur situé à Kumamoto dans la préfecture du même nom au Japon. C\'était un grand château extrêmement bien fortifié. Le tenshu a été partiellement rénové en 1960 mais les plus anciennes poutres de bois ont été laissées sur place.\r\n', 40),
+(18, 14, 'Château de Kumamoto', 'Le château de Kumamoto est un château en hauteur situé à Kumamoto dans la préfecture du même nom au Japon. C\'était un grand château extrêmement bien fortifié. Le tenshu a été partiellement rénové en 1960 mais les plus anciennes poutres de bois ont été laissées sur place.', 40),
 (19, 15, 'Wellington Cable Car', 'Le téléphérique de Wellington est un funiculaire à Wellington, en Nouvelle-Zélande, entre Lambton Quay, la principale rue commerçante, et Kelburn, une banlieue dans les collines surplombant le centre-ville, culminant à 120 m sur une longueur de 612 m. ', 50),
 (20, 16, 'Basilique Saint Marc', 'La basilique cathédrale Saint-Marc, à Venise, est la plus importante basilique de Venise. Construite en 828, reconstruite après l\'incendie qui ravagea le palais des Doges en 976, elle est, depuis 1807, la cathédrale du patriarche de Venise.', 30),
 (21, 17, 'Mandalay Bay Resort and Casino', 'Le Mandalay Bay Resort and Casino est un hôtel de luxe de 39 étages avec casino, situé sur le Las Vegas Strip à Paradise. Il est détenu et exploité par MGM Resorts International. Les cinq derniers étages de la tour sont occupés par un hôtel Four Seasons.', 100);
@@ -215,7 +215,11 @@ INSERT INTO `reservation` (`id_circuit`, `id_utilisateur`, `nb_place`, `date`, `
 (7, 4, 5, '2022-03-12', '20:20:02'),
 (1, 10, 5, '2022-03-14', '19:09:19'),
 (2, 12, 4, '2022-03-14', '21:25:57'),
-(2, 6, 2, '2022-03-15', '13:15:13');
+(1, 15, 2, '2022-03-16', '15:52:43'),
+(6, 15, 5, '2022-03-16', '15:53:02'),
+(4, 6, 2, '2022-03-18', '10:34:13'),
+(1, 6, 2, '2022-03-18', '10:37:34'),
+(5, 6, 3, '2022-03-18', '10:42:33');
 
 -- --------------------------------------------------------
 
@@ -247,7 +251,8 @@ INSERT INTO `utilisateur` (`id`, `role_admin`, `nom`, `prenom`, `date_naissance`
 (10, 0, 'test', 'test', NULL, 'test5', 'test5@test.com', '$2b$12$f3e.R2CJeNRT8p0AU2EkkO.o9zo4dwSmhoVJfh3iHtNDldQo9g3tW'),
 (11, 0, 'toto', 'toto', NULL, 'toto2', 'Toto2@toto.com', '$2b$12$d4aWkRVbXSxDCNsP5wBwmuhro4m75JT/KWak7MSvBoIClcuyUQQOW'),
 (12, 0, 'azerty', 'azerty', NULL, 'azerty', 'azerty@gmail.com', '$2b$12$gdqD4qmSaTel62i3pspUMOoTwbwtaR9RtPHfrigvxGFbSYo6WWu1W'),
-(14, 0, 't', 't', '2022-03-16', 't', 'test@test.com', '$2b$12$XQONfSwwb1eVvCrp4l9qY.vA9TkioEnM1WG5LGgWudgLz5FgbXpVO');
+(14, 0, 't', 't', '2022-03-16', 't', 'test@test.com', '$2b$12$XQONfSwwb1eVvCrp4l9qY.vA9TkioEnM1WG5LGgWudgLz5FgbXpVO'),
+(15, 0, 'j', 'j', '2022-03-16', 'j', 'j@j.com', '$2b$12$JNZ6eITfNpO4VAfqdRnyDeaKPBrv5whb4E2EbKX7EL4mfNx/ZuFUe');
 
 -- --------------------------------------------------------
 
@@ -375,7 +380,7 @@ ALTER TABLE `pays`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT pour la table `ville`
