@@ -12,8 +12,11 @@
             <a href="{{url_for('index')}}">
                 <img class="logo" src="{{ url_for('static', filename='logo.png') }}">
             </a>
+            <!--la page charge le pseudo s'il y en a un-->
             <p class="nom font">{{pseudo}}</p>
+            <!--le contenu du titre change selon les pages-->
             {% block titre %}<a href="https://youtu.be/sM2ZhByFcDk?t=56" target="_blank"><h1 class="titre-header font">Voyage-Voyage</h1></a>{% endblock %}
+            <!--s'il y a une connexion les boutons sur le header sont différents-->
             {% if pseudo %}
                 <input class="bouton bouton-header" type="button" value="Réservation" onclick="window.location.href='{{url_for('listereservation')}}';">
                 <input class="bouton bouton-header bouton-header-bas" type="button" value="Déconnexion" onclick="window.location.href='{{url_for('deconnexion')}}';">
@@ -21,12 +24,15 @@
                 <input class="bouton bouton-header" type="button" value="Connexion" onclick="window.location.href='{{url_for('connexion')}}';">
                 <input class="bouton bouton-header bouton-header-bas" type="button" value="Inscription" onclick="window.location.href='{{url_for('creercompte')}}';">
             {% endif %}
+            <!--si celui qui se connecte est un admin, il à un bouton en plus-->
             {% if role == 1 %}
                 <input class="bouton bouton-header bouton-header-gauche" type="button" value="Admin" onclick="">
             {% endif %}
         </header>
+        <!--contenu de la section qui change entre toute les pages-->
         {% block contenu %}
         <section>
+            <!--fait une boucle fort par rapport au donnée récupéré-->
                 {% for element_liste_circuit in liste_circuit %}
                 <div class="contenu-circuit">
                     <h2 class="titre-circuit font">{{element_liste_circuit.0}}</h2>
@@ -36,6 +42,7 @@
                 {% endfor %}
         </section>
         {% endblock %}
+        <!--contenu du footer qui change entre toute les pages-->
         {% block footer %}
             <footer class="footer">
                 <p class="copyright font">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>

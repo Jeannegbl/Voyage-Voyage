@@ -1,12 +1,14 @@
+<!--la page index.html est le template parent, tout les fichier côté front end reprennent cette base-->
 {% extends 'index.html' %}
-
+<!--le contenu du titre change selon les pages-->
 {% block titre %}<h1 class="titre-header font">Créer un compte</h1>{% endblock %}
 
-
+<!--contenu de la section qui change entre toute les pages-->
 {% block contenu %}
 <body>
     <form class="connexion-inscription" method="POST">
         <fieldset>
+            <!--formulaire qui sera récupéré-->
             {{ form.csrf_token }}
             <div class="champs"><label class="font">Nom du compte</label>{{ form.user(size=20) }}</div>
             <div class="champs"><label class="font">Adresse mail</label>{{ form.mail(size=20) }}</div>
@@ -19,6 +21,7 @@
     </form>
 </body>
 {% endblock %}
+<!--contenu du footer qui change entre toute les pages-->
 {% block footer %}
 <footer class="footer footer-connexion-inscription">
     <p class="copyright font">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>

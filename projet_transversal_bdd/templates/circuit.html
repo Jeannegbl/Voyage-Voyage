@@ -1,7 +1,9 @@
+<!--la page index.html est le template parent, tout les fichier côté front end reprennent cette base-->
 {% extends 'index.html' %}
-
+<!--le contenu du titre change selon les pages-->
 {% block titre %}<h1 class="titre-header font">{{nom_circuit}}</h1>{% endblock %}
 
+<!--contenu de la section qui change entre toute les pages-->
 {% block contenu %}
 <div class="contenu-circuit-lieu">
     <div class="texte-circuit">
@@ -28,6 +30,7 @@
     </div>
 </div>
 {% endblock %}
+<!--contenu du footer qui change entre toute les pages-->
 {% block footer %}
 <footer class="footer footer-connexion-inscription">
     <p class="copyright font">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>

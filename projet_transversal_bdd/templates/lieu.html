@@ -1,8 +1,9 @@
+<!--la page index.html est le template parent, tout les fichier côté front end reprennent cette base-->
 {% extends 'index.html' %}
-
+<!--le contenu du titre change selon les pages-->
 {% block titre %}<h1 class="titre-header font">{{nom_lieu}}</h1>{% endblock %}
 
-
+<!--contenu de la section qui change entre toute les pages-->
 {% block contenu %}
 <div class="contenu-circuit-lieu contenu-lieu" style="background-image:url({{url}});">
     <h2 class="titre-circuit-lieu titre-lieu font">{{ville_lieu}}<br>{{pays_lieu}}</h2>
@@ -14,6 +15,7 @@
     <input class="bouton bouton-retour-lieu" type="button" value="Retour" onclick="javascript:history.back(-1);">
 </div>
 {% endblock %}
+<!--contenu du footer qui change entre toute les pages-->
 {% block footer %}
 <footer class="footer footer-connexion-inscription">
     <p class="copyright font">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>

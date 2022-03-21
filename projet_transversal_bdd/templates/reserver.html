@@ -1,14 +1,16 @@
+<!--la page index.html est le template parent, tout les fichier côté front end reprennent cette base-->
 {% extends 'index.html' %}
-
+<!--le contenu du titre change selon les pages-->
 {% block titre %}<h1 class="titre-header font">Réserver</h1>{% endblock %}
 
-
+<!--contenu de la section qui change entre toute les pages-->
 {% block contenu %}
 <body>
     <form class="connexion-inscription" method="POST">
         <fieldset>
             <p class="font">Voulez-vous vraiment réserver pour le circuit {{circuit}} ?</p>
             <p class="font">Indiquez nous alors le nombre de personne</p>
+            <!--formulaire qui sera récupéré-->
             {{ form.csrf_token }}
             <div class="nb-place font champs"><label>Nombre de place</label>{{ form.place(size=20) }}</div>
             <div class="space-between non-padding">
@@ -19,6 +21,7 @@
     </form>
 </body>
 {% endblock %}
+<!--contenu du footer qui change entre toute les pages-->
 {% block footer %}
 <footer class="footer footer-connexion-inscription">
     <p class="copyright font">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>
