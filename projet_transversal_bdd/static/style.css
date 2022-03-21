@@ -161,7 +161,7 @@ body{
     height: 40vh;
     width: 40vw;
     margin-bottom: 20vh;
-    background-color: #f4f4f4;
+    background-color: #e0e0e0;
     padding: 1em;
     border-radius: 15px;
     display: inline-grid;
@@ -194,7 +194,7 @@ body{
 .contenu-circuit-lieu{
     position: relative;
     top: 15vh;
-    background-color: #f4f4f4;
+    background-color: #e0e0e0;
     width: 80vw;
     left: 10vw;
     padding: 1em;
@@ -213,7 +213,7 @@ body{
 
 
 fieldset{
-    background-color: #f4f4f4;
+    background-color: #e0e0e0;
     background-repeat: round;
     border: transparent solid 1px;
     border-radius: 15px;
@@ -277,7 +277,7 @@ figcaption{
 .liste{
     font-size: 3vh;
     font-weight: bolder;
-    background-color: #f4f4f4;
+    background-color: #e0e0e0;
     border: none;
     display: inline-block;
     width: 49vw;
