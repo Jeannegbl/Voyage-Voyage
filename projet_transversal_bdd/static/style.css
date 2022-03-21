@@ -28,7 +28,7 @@ body{
 .header{
     height: 15vh;
     width: 100vw;
-    background: linear-gradient(0.25turn, rgba(63, 135, 166, 0.8), rgba(245, 231, 212,0.8));
+    background: linear-gradient(0.25turn, rgba(63, 135, 166, 0.9), rgba(245, 231, 212,0.9));
     top: 0vh;
     left: 0vw;
     position: fixed;
@@ -236,7 +236,7 @@ label{
 .footer{
     margin-top: 10vw;
     width: 100vw;
-    background-color: rgba(245,245,245,0.8);
+    background-color: rgba(245,245,245,0.9);
     left: 0;
     position: absolute;
 }
