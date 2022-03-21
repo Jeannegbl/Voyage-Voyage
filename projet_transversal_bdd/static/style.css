@@ -145,6 +145,7 @@ height: 3vh;
     background-image: url("https://wallpaperboat.com/wp-content/uploads/2021/03/19/72164/sand-02.jpg");
     background-repeat: round;
     padding: 1em;
+    border-radius: 15px;
 }
 .titre-circuit{
     height: 0;
