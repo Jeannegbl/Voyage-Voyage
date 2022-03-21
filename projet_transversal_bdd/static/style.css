@@ -61,7 +61,7 @@ body{
     border-radius: 7px;
     background-color: white;
     color: black;
-    border: 2px solid seagreen;
+    border: 2px solid CornflowerBlue;
     font-size: 1.6vh;
     padding: 5px;
     cursor: pointer;
@@ -71,7 +71,7 @@ body{
     margin: auto;
 }
 .bouton:hover{
-    background-color: seagreen;
+    background-color: CornflowerBlue;
     color:white;
 }
 .bouton-header{
@@ -92,10 +92,10 @@ body{
     width : auto;
 }
 .bouton-rouge{
-    border: 2px solid #CF1111;
+    border: 2px solid #EC3C3C;
 }
 .bouton-rouge:hover{
-    background-color: #CF1111;
+    background-color: #EC3C3C;
 }
 .bouton-annulation{
     position: sticky;
@@ -110,31 +110,36 @@ body{
     position: relative;
     top: 1vh;
     left: 22vh;
-    font-size: 1.6vh;
-    border-radius: 7px;
-    border: 1px solid grey;
-    padding: 5px;
-    cursor: pointer;
 }
 .envoyer-réservation{
     top: 0;
     left: 0;
-    transition: all 0.5s;
+    font-size: 1.6vh;
+    border-radius: 7px;
+    background-color: white;
+    color: black;
+    border: 1px solid CornflowerBlue;
+    padding: 5px;
+    cursor: pointer;
+}
+.envoyer-réservation:hover{
+    background-color: CornflowerBlue;
+    color: white;
 }
 .envoyer-réservation span{
     transition: 0.5s;
 }
 .envoyer-réservation span:after{
     content: '\2708';
-    color: black;
     font-size: 25px;
     top: 0;
     position: absolute;
     opacity: 0;
-    transition: 0.5s;
+    padding-right: 10px;
 }
 .envoyer-réservation:hover span {
-    padding-right: 20px;
+    padding-right: 40px;
+    color: white;
 }
 .envoyer-réservation:hover span:after {
     opacity: 1;
