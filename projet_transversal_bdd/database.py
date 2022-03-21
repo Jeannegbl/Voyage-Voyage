@@ -21,7 +21,7 @@ class Singleton:
 
 @Singleton
 class Database:
-    def __init__(self):
+    def __init__(self): #connexion à la base de donnée qui sera rappeler à chaque fois
         self.conn = mysql.connector.connect(
                     host="localhost",
                     user="root",
@@ -105,8 +105,8 @@ class Database:
 if __name__ == '__main__':
     connexion_unique = Database.Instance()
     query20 = " SELECT id FROM circuit WHERE nom = %s "
-    te = ('voyage',)
-    ui = connexion_unique.fetchall_arguments(query20, te)
+    test = ('voyage',)
+    ui = connexion_unique.fetchall_arguments(query20, test)
     print(ui)
 
 

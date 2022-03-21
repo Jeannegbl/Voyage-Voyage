@@ -13,7 +13,7 @@
                 <img class="logo" src="{{ url_for('static', filename='logo.png') }}">
             </a>
             <p class="nom font">{{pseudo}}</p>
-            {% block titre %}<h1 class="titre-header font">Voyage-Voyage</h1>{% endblock %}
+            {% block titre %}<a href="https://youtu.be/sM2ZhByFcDk?t=56" target="_blank"><h1 class="titre-header font">Voyage-Voyage</h1></a>{% endblock %}
             {% if pseudo %}
                 <input class="bouton bouton-header" type="button" value="Réservation" onclick="window.location.href='{{url_for('listereservation')}}';">
                 <input class="bouton bouton-header bouton-header-bas" type="button" value="Déconnexion" onclick="window.location.href='{{url_for('deconnexion')}}';">
