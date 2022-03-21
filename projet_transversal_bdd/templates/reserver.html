@@ -1,16 +1,16 @@
 {% extends 'index.html' %}
 
-{% block titre %}<h1 class="titre-header">Réserver</h1>{% endblock %}
+{% block titre %}<h1 class="titre-header font">Réserver</h1>{% endblock %}
 
 
 {% block contenu %}
-<body class="fond-connexion-inscription">
-    <form class="connexion" method="POST">
+<body>
+    <form class="connexion-inscription" method="POST">
         <fieldset>
-            <p>Voulez-vous vraiment réserver pour le circuit {{circuit}} ?</p>
-            <p>Indiquez nous alors le nombre de personne</p>
+            <p class="font">Voulez-vous vraiment réserver pour le circuit {{circuit}} ?</p>
+            <p class="font">Indiquez nous alors le nombre de personne</p>
             {{ form.csrf_token }}
-            <div class="nb-place"><label>Nombre de place</label>{{ form.place(size=20) }}</div>
+            <div class="nb-place font champs"><label>Nombre de place</label>{{ form.place(size=20) }}</div>
             <div class="space-between non-padding">
                 <button class="envoyer envoyer-réservation" type="submit"><span>Valider la réservation</span> </button>
                 <input class="bouton bouton-annulation bouton-rouge" type="button" value="Annuler" onclick="javascript:history.back(-1);">
@@ -21,6 +21,6 @@
 {% endblock %}
 {% block footer %}
 <footer class="footer footer-connexion-inscription">
-    <p class="copyright">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>
+    <p class="copyright font">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>
 </footer>
 {% endblock %}

@@ -1,305 +1,280 @@
 body{
-background-color: #d2d2d2;
-overflow-x: hidden;
+    background: linear-gradient(0.25turn, #3f87a6, rgb(245, 231, 212));
+    overflow-x: hidden;
 }
 .fond-connexion-inscription{
-background-image: url("https://files.macg.co/macgupload/1496758788-26394278821921.jpg");
-background-repeat: no-repeat;
-background-size: cover;
+    background-image: url("https://files.macg.co/macgupload/1496758788-26394278821921.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
+.font{
+    font-family: cursive;
+}
 .image-fond{
-top : 0;
-width: 100vw;
-height : 100vh;
-position : fixed;
-z-index: -1;
+    top : 0;
+    width: 100vw;
+    height : 100vh;
+    position : fixed;
+    z-index: -1;
 }
 .titre{
-text-align: center;
-font-size: 10vh;
-margin: 4vh;
+    text-align: center;
+    font-size: 10vh;
+    margin: 4vh;
 }
 .header{
-height: 10vh;
-width: 100vw;
-background-color: #318ce7;
-top: 0vh;
-left: 0vw;
-position: fixed;
-z-index: 1;
+    height: 15vh;
+    width: 100vw;
+    background: linear-gradient(0.25turn, rgba(63, 135, 166, 0.8), rgba(245, 231, 212,0.8));
+    top: 0vh;
+    left: 0vw;
+    position: fixed;
+    z-index: 1;
 }
 .logo{
-height: 10vh;
-width: 10vh;
-left: 2vw;
-position: fixed;
+    height: 14vh;
+    width: 14vh;
+    left: 2vw;
+    position: fixed;
 }
 .nom{
-top : 1vh;
-left : 8vw;
-font-size: 6vh;
-position: fixed;
-margin : 0;
+    left : 9vw;
+    font-size: 8vh;
+    position: fixed;
+    margin : 3vh;
 }
 .titre-header{
-font-size: 8vh;
-margin: 0;
-text-align: center;
-}
-.titre-header-circuit{
-height : 8vh;
-font-size: 6vh;
-top : 1vh;
-position: fixed;
-width: 50vw;
-left: 25vw;
-margin: 0;
-text-align: center;
-}
-.titre-header-lieu{
-height : 8vh;
-font-size: 6vh;
-top : 1vh;
-position: fixed;
-width: 60vw;
-left: 20vw;
-margin: 0;
-text-align: center;
+    font-size: 8vh;
+    margin: 3vh;
+    text-align: center;
 }
 
 
 
 .bouton{
-width: 12vh;
-height: 2.8vh;
-border-radius: 17px;
-background-color: white;
-color: black;
-border: 2px solid seagreen;
-font-size: 1.6vh;
+    width: 12vh;
+    border-radius: 7px;
+    background-color: white;
+    color: black;
+    border: 2px solid seagreen;
+    font-size: 1.6vh;
+    padding: 5px;
 }
 .bouton-index{
-position: relative;
-top: 30vh;
-display: block;
-margin: auto;
+    position: relative;
+    top: 30vh;
+    display: block;
+    margin: auto;
 }
 .bouton:hover{
-background-color: seagreen;
-color:white;
+    background-color: seagreen;
+    color:white;
 }
 .bouton-header{
-position: fixed;
-left: 90vw;
-top: 2vh;
+    position: fixed;
+    left: 90vw;
+    top: 3vh;
 }
 .bouton-header-bas{
-position: absolute;
-top: 5vh;
+    position: absolute;
+    top: 8vh;
 }
 .bouton-width-auto{
-width : auto;
+    width : auto;
 }
 .bouton-rouge{
-border: 2px solid #CF1111;
+    border: 2px solid #CF1111;
 }
 .bouton-rouge:hover{
-background-color: #CF1111;
+    background-color: #CF1111;
 }
 .bouton-annulation{
-position: sticky;
-left: 60vw;
+    position: sticky;
+    left: 60vw;
 }
 .bouton-retour-lieu{
-top: 38vh;
-position: absolute;
-height: 2vw;
-left: 2vw;
+    top: 40vh;
+    position: absolute;
+    left: 2vw;
 }
 .envoyer{
-position: relative;
-top: 1vh;
-left: 22vh;
-height: 30px;
-font-size: 1.6vh;
-border-radius: 17px;
-border: 1px solid grey;
+    position: relative;
+    top: 1vh;
+    left: 22vh;
+    font-size: 1.6vh;
+    border-radius: 7px;
+    border: 1px solid grey;
+    padding: 5px;
 }
 .envoyer-réservation{
-top: 0;
-left: 0;
-transition: all 0.5s;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
 }
 .envoyer-réservation span{
-transition: 0.5s;
+    transition: 0.5s;
 }
 .envoyer-réservation span:after{
-content: '\2708';
-color: black;
-font-size: 25px;
-top: 0;
-position: absolute;
-opacity: 0;
-transition: 0.5s;
+    content: '\2708';
+    color: black;
+    font-size: 25px;
+    top: 0;
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
 }
 .envoyer-réservation:hover span {
-padding-right: 20px;
+    padding-right: 20px;
 }
 .envoyer-réservation:hover span:after {
-opacity: 1;
-right: 0;
+    opacity: 1;
+    right: 0;
 }
-
+.champs > input{
+height: 3vh;
+}
 
 .contenu-circuit{
-position: relative;
-top : 30vh;
-height : 40vh;
-width : 80vw;
-left : 10vw;
-margin-bottom: 20vh;
-background-image: url("https://images.unsplash.com/photo-1499346030926-9a72daac6c63?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80");
-background-repeat: round;
+    position: relative;
+    top : 30vh;
+    height : 40vh;
+    width : 80vw;
+    left : 10vw;
+    margin-bottom: 20vh;
+    background-image: url("https://wallpaperboat.com/wp-content/uploads/2021/03/19/72164/sand-02.jpg");
+    background-repeat: round;
+    padding: 1em;
 }
 .titre-circuit{
-height: 0;
-width: 80vw;
-text-align: center;
-font-size: 7vh;
-margin: 0;
+    height: 0;
+    width: 80vw;
+    text-align: center;
+    font-size: 7vh;
+    margin: 0;
 }
 .description-index{
-position :absolute;
-width: 80vw;
-text-align: center;
-font-size: 4vh;
-margin: 0;
-top : 10vh;
+    position :absolute;
+    width: 80vw;
+    text-align: center;
+    font-size: 4vh;
+    margin: 0;
+    top : 10vh;
 }
 .description-lieu{
-width: 30vw;
-top: 7vw;
-position: absolute;
-font-size: 2vh;
-margin-left: 4vw;
+    width: 30vw;
+    top: 9vw;
+    position: absolute;
+    font-size: 2.5vh;
+    margin-left: 4vw;
 }
 .titre-circuit-lieu{
-font-size: 4vh;
+    font-size: 4vh;
 }
 .titre-lieu{
-width: 30vw;
-margin-left: 4vw;
+    width: 30vw;
+    margin-left: 4vw;
 }
 .contenu-circuit-lieu{
-position: relative;
-top: 20vh;
-background-color: whitesmoke;
-width: 80vw;
-left: 10vw;
+    position: relative;
+    top: 15vh;
+    background-color: #ddd;
+    width: 80vw;
+    left: 10vw;
+    padding: 1em;
 }
 .contenu-lieu{
-height: 45vh;
-background-repeat: no-repeat;
-background-position: right;
-background-size: contain;
-text-align: center;
+    height: 45vh;
+    top: 20vh;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    text-align: center;
+    padding: 1em;
 }
 
 
 
 fieldset{
-background-color: lightblue;
-border: grey solid 1px;
+    background: url("https://wallpaperboat.com/wp-content/uploads/2021/03/19/72164/sand-02.jpg");
+    border: transparent solid 1px;
 }
-.connexion{
-position: relative;
-top : 30vh;
-font-size: 3vh;
-font-weight: bolder;
-display: flex;
-justify-content: center;
-}
-.inscription{
-position: relative;
-top : 30vh;
-font-size: 3vh;
-font-weight: bolder;
-display: flex;
-justify-content: center;
+.connexion-inscription{
+    position: relative;
+    top : 30vh;
+    font-size: 4vh;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
 }
 label{
-display: inline-block;
-width: 10em;
-}
-input{
-height: 3vh;
+    display: inline-block;
+    width: 8em;
 }
 
 
 
 .footer{
-margin-top: 10vw;
-width: 100vw;
-background-color: #318ce7;
-left: 0;
-position: absolute;
+    margin-top: 10vw;
+    width: 100vw;
+    background-color: rgba(245,245,245,0.6);
+    left: 0;
+    position: absolute;
 }
 .footer-connexion-inscription{
-bottom: 0;
-overflow-y: hidden;
+    bottom: 0;
+    overflow-y: hidden;
 }
 
 .copyright{
-text-align: center;
-font-size: 2vh;
-margin: 4vh;
+    text-align: center;
+    font-size: 2.5vh;
+    margin: 4vh;
 }
 
 
 
 .img-circuit{
-display: inline-block;
-width: min-content;
-background-color: white;
-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-margin-bottom: 25px;
-border: 1px solid transparent;
+    display: inline-block;
+    width: min-content;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-bottom: 25px;
+    border: 1px solid transparent;
 }
 .img-circuit:hover{
-border: 1px solid #777;
+    border: 1px solid #777;
 }
 .img-lieu{
-height: 20vh;
-cursor: pointer;
+    height: 20vh;
+    cursor: pointer;
 }
 figcaption{
-padding: 1vh 0 1vh 0;
-font-size: 16px;
+    padding: 1vh 0 1vh 0;
+    font-size: 16px;
 }
 
 .liste{
-font-size: 3vh;
-font-weight: bolder;
-background-color: lightblue;
-border: transparent solid 1px;
+    font-size: 3vh;
+    font-weight: bolder;
+    background-color: lightblue;
+    border: transparent solid 1px;
 }
 
 .margin-top{
-margin-top: 30vh;
+    margin-top: 30vh;
 }
 .texte-circuit{
-text-align: center;
-font-size: 2vh;
+    text-align: center;
+    font-size: 2.5vh;
 }
 .space-between{
-display: flex;
-justify-content: space-between;
-padding: 0 15px 15px 15px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px 15px 15px;
 }
 .non-padding{
-padding: initial;
+    padding: initial;
 }
 .nb-place{
-text-align: center;
+    text-align: center;
 }

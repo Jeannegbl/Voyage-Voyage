@@ -1,12 +1,12 @@
 {% extends 'index.html' %}
 
-{% block titre %}<h1 class="titre-header">Réservation</h1>{% endblock %}
+{% block titre %}<h1 class="titre-header font">Réservation</h1>{% endblock %}
 
 {% block contenu %}
 <section class="margin-top">
-    <body class="fond-connexion-inscription">
+    <body>
     {% for element_liste_reservation in liste_reservation %}
-            <div class="liste">
+            <div class="liste font">
                 <ul>
                     <li>
                         <p>{{element_liste_reservation.0}} pour {{element_liste_reservation.1}} personne(s) du {{element_liste_reservation.2}} jusqu'au {{element_liste_reservation.3}}</p>
@@ -19,6 +19,6 @@
 {% endblock %}
 {% block footer %}
 <footer class="footer footer-connexion-inscription">
-    <p class="copyright">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>
+    <p class="copyright font">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>
 </footer>
 {% endblock %}

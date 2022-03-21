@@ -12,8 +12,8 @@
             <a href="{{url_for('index')}}">
                 <img class="logo" src="{{ url_for('static', filename='logo.png') }}">
             </a>
-            <p class="nom">{{pseudo}}</p>
-            {% block titre %}<h1 class="titre-header">Voyage-Voyage</h1>{% endblock %}
+            <p class="nom font">{{pseudo}}</p>
+            {% block titre %}<h1 class="titre-header font">Voyage-Voyage</h1>{% endblock %}
             {% if pseudo %}
                 <input class="bouton bouton-header" type="button" value="Réservation" onclick="window.location.href='{{url_for('listereservation')}}';">
                 <input class="bouton bouton-header bouton-header-bas bouton-rouge" type="button" value="Déconnexion" onclick="window.location.href='{{url_for('deconnexion')}}';">
@@ -26,8 +26,8 @@
         <section>
                 {% for element_liste_circuit in liste_circuit %}
                 <div class="contenu-circuit">
-                    <h2 class="titre-circuit">{{element_liste_circuit.0}}</h2>
-                    <p class="description-index">{{element_liste_circuit.1}}</p>
+                    <h2 class="titre-circuit font">{{element_liste_circuit.0}}</h2>
+                    <p class="description-index font">{{element_liste_circuit.1}}</p>
                     <input class="bouton bouton-index bouton-width-auto" type="button" value="Plus d'informations" onclick="window.location.href='{{element_liste_circuit.0}}';">
                 </div>
                 {% endfor %}
@@ -35,7 +35,7 @@
         {% endblock %}
         {% block footer %}
             <footer class="footer">
-                <p class="copyright">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>
+                <p class="copyright font">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>
             </footer>
         {% endblock %}
     </body>

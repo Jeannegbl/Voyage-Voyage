@@ -1,20 +1,20 @@
 {% extends 'index.html' %}
 
-{% block titre %}<h1 class="titre-header-circuit">{{nom_circuit}}</h1>{% endblock %}
+{% block titre %}<h1 class="titre-header font">{{nom_circuit}}</h1>{% endblock %}
 
 {% block contenu %}
 <div class="contenu-circuit-lieu">
     <div class="texte-circuit">
-        <h2 class="titre-circuit-lieu">{{description_circuit}}</h2>
-        <p class="date-circuit">Départ le {{date_circuit_debut}} à {{depart_circuit}} jusqu'au {{date_circuit_fin}} à {{arrivee_circuit}}</p>
-        <p> Les lieux que vous allez découvrir dans ce circuit : </p>
+        <h2 class="titre-circuit-lieu font">{{description_circuit}}</h2>
+        <p class="date-circuit font">Départ le {{date_circuit_debut}} à {{depart_circuit}} jusqu'au {{date_circuit_fin}} à {{arrivee_circuit}}</p>
+        <p class="font"> Les lieux que vous allez découvrir dans ce circuit : </p>
         {% for your_list_element in circuit_lieu %}
         <div class="img-circuit">
             <img onclick="window.location.href='circuit/{{your_list_element.1}}';" class="img-lieu" src={{your_list_element.0}}>
             <figcaption>{{your_list_element.1}}</figcaption>
         </div>
         {% endfor %}
-        <p class="prix-circuit">{{prix_circuit}} €</p>
+        <p class="prix-circuit font">{{prix_circuit}} €</p>
     </div>
     <div class="space-between">
         {% if reservation == "Réserver" %}
@@ -30,7 +30,7 @@
 {% endblock %}
 {% block footer %}
 <footer class="footer footer-connexion-inscription">
-    <p class="copyright">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>
+    <p class="copyright font">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>
 </footer>
 {% endblock %}
 

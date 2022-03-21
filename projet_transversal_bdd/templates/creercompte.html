@@ -1,19 +1,19 @@
 {% extends 'index.html' %}
 
-{% block titre %}<h1 class="titre-header">Créer un compte</h1>{% endblock %}
+{% block titre %}<h1 class="titre-header font">Créer un compte</h1>{% endblock %}
 
 
 {% block contenu %}
-<body class="fond-connexion-inscription">
-    <form class="inscription" method="POST">
+<body>
+    <form class="connexion-inscription" method="POST">
         <fieldset>
             {{ form.csrf_token }}
-            <div><label>Nom du compte</label>{{ form.user(size=20) }}</div>
-            <div><label>Adresse mail</label>{{ form.mail(size=20) }}</div>
-            <div><label>Mot de passe</label>{{ form.mdp(size=20) }}</div>
-            <div><label>Nom</label>{{ form.nom(size=20) }}</div>
-            <div><label>Prénom</label>{{ form.prenom(size=20) }}</div>
-            <div><label>Anniversaire</label>{{ form.anniversaire(size=20) }}</div>
+            <div class="champs"><label class="font">Nom du compte</label>{{ form.user(size=20) }}</div>
+            <div class="champs"><label class="font">Adresse mail</label>{{ form.mail(size=20) }}</div>
+            <div class="champs"><label class="font">Mot de passe</label>{{ form.mdp(size=20) }}</div>
+            <div class="champs"><label class="font">Nom</label>{{ form.nom(size=20) }}</div>
+            <div class="champs"><label class="font">Prénom</label>{{ form.prenom(size=20) }}</div>
+            <div class="champs"><label class="font">Anniversaire</label>{{ form.anniversaire(size=20) }}</div>
             <input class="envoyer" type="submit" value="Inscription">
         </fieldset>
     </form>
@@ -21,6 +21,6 @@
 {% endblock %}
 {% block footer %}
 <footer class="footer footer-connexion-inscription">
-    <p class="copyright">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>
+    <p class="copyright font">Copyright &copy; 2022 Voyage-Voyage | Mentions Légales | Politique de confidentialité</p>
 </footer>
 {% endblock %}
