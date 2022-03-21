@@ -19,12 +19,14 @@ def index():
     index_circuit = connexion_unique.fetchall_simple(query_index)
     if 'pseudo' in session:
         pseudo = session['pseudo']
-        return render_template('index.html', liste_circuit=index_circuit, pseudo=pseudo)
+        role = session['role']
+        return render_template('index.html', liste_circuit=index_circuit, pseudo=pseudo, role=role)
     else:
         return render_template('index.html', liste_circuit=index_circuit)
 @app.route('/deconnexion')
 def deconnexion():
     del session['pseudo']
+    del session['role']
     return redirect(url_for('index'))
 
 @app.route('/<circuit>')
@@ -52,10 +54,11 @@ def circuit(circuit):
     session['circuit'] = circuit
     if 'pseudo' in session:
         pseudo = session['pseudo']
+        role = session['role']
         reservation = "Réserver"
         return render_template('circuit.html', nom_circuit=nom_circuit, description_circuit=description_circuit, prix_circuit=prix_circuit,
                                circuit_lieu=circuit_lieu, date_circuit_debut=date_circuit_debut, date_circuit_fin=date_circuit_fin,
-                               depart_circuit=depart_circuit, arrivee_circuit=arrivee_circuit, pseudo=pseudo, reservation=reservation, id_circuit=id_circuit)
+                               depart_circuit=depart_circuit, arrivee_circuit=arrivee_circuit, pseudo=pseudo, role=role, reservation=reservation, id_circuit=id_circuit)
     else:
         return render_template('circuit.html', nom_circuit=nom_circuit, description_circuit=description_circuit, prix_circuit=prix_circuit,
                                circuit_lieu=circuit_lieu, date_circuit_debut=date_circuit_debut, date_circuit_fin=date_circuit_fin,
@@ -78,8 +81,9 @@ def lieu(lieu):
     nom_lieu = lieu
     if 'pseudo' in session:
         pseudo = session['pseudo']
+        role = session['role']
         return render_template('lieu.html', url=url_lieu, nom_lieu=nom_lieu, ville_lieu=ville_lieu, pays_lieu=pays_lieu,
-                           description_lieu=description_lieu, prix_lieu=prix_lieu, pseudo=pseudo)
+                           description_lieu=description_lieu, prix_lieu=prix_lieu, pseudo=pseudo, role=role)
     else:
         return render_template('lieu.html', url=url_lieu, nom_lieu=nom_lieu, ville_lieu=ville_lieu, pays_lieu=pays_lieu,
                            description_lieu=description_lieu, prix_lieu=prix_lieu)
@@ -151,6 +155,7 @@ def connexion():
 def reserver():
     pseudo = session['pseudo']
     circuit = session['circuit']
+    role = session['role']
     class reserverform(FlaskForm):
         place = StringField('nb_place', validators=[DataRequired()])
     form = reserverform()
@@ -164,15 +169,16 @@ def reserver():
         query_insert = "INSERT INTO `reservation` (`id_circuit`, `id_utilisateur`, `nb_place`, `date`, `heure`) VALUES (%s, %s, %s, CURRENT_DATE, CURRENT_TIME);"
         connexion_unique.commit(query_insert, (circuit_id, pseudo_id, place))
         return redirect(url_for('listereservation'))
-    return render_template('/reserver.html', form=form, pseudo=pseudo, circuit=circuit)
+    return render_template('/reserver.html', form=form, pseudo=pseudo, circuit=circuit, role=role)
 
 @app.route('/listereservation')
 def listereservation():
     pseudo = session['pseudo']
+    role = session['role']
     connexion_unique = Database.Instance()
     query_reservation = "SELECT circuit.nom, reservation.nb_place, circuit.date_depart, circuit.date_arrivee FROM `reservation` JOIN circuit ON circuit.id = reservation.id_circuit JOIN utilisateur ON utilisateur.id = reservation.id_utilisateur WHERE utilisateur.login = '%s'" % pseudo
     listereservation_reservation = connexion_unique.fetchall_simple(query_reservation)
-    return render_template('listereservation.html', liste_reservation=listereservation_reservation, pseudo=pseudo)
+    return render_template('listereservation.html', liste_reservation=listereservation_reservation, pseudo=pseudo, role=role)
 
 
 
