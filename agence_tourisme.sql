@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : sam. 19 mars 2022 à 21:43
+-- Généré le : lun. 21 mars 2022 à 23:46
 -- Version du serveur :  10.3.34-MariaDB-0ubuntu0.20.04.1
 -- Version de PHP : 7.4.3
 
@@ -154,11 +154,9 @@ INSERT INTO `lieu` (`id`, `id_ville`, `label`, `description`, `prix_visite`) VAL
 (9, 3, 'Église Saint Martial', 'Le bâtiment est un exemple d\'église fortifiée. Elle possède des contreforts surmontés d\'échauguettes cylindriques. Elle était entourée d\'une muraille dont subsiste une tour carrée, munie de créneaux et de mâchicoulis. L\'intérieur de l\'église possède un reliquaire émaillé datant du XIIIe siècle', 0),
 (10, 6, 'SkyTower', 'La Sky Tower est une tour située dans le centre-ville d\'Auckland, et qui sert d\'émetteur pour la radio et la télévision.', 25),
 (11, 8, 'Sagrada Familia', 'La Sagrada Família, Temple Expiatori de la Sagrada Família de son nom complet en catalan, ou Templo Expiatorio de la Sagrada Familia en espagnol est une basilique de Barcelone dont la construction a commencé en 1882. C’est l’un des exemples les plus connus du modernisme catalan et un monument emblématique de la ville.', 60),
-(12, 9, 'Mont Royale', 'Le Mont Royal est une colline qui domine la ville de Montréal, au Québec. Il s\'agit de l\'une des dix collines montérégiennes situées dans le sud-ouest de la province.', 20),
 (13, 5, 'Colisée', 'Le Colisée, à l\'origine amphithéâtre Flavien, est un immense amphithéâtre ovoïde situé dans le centre de la ville de Rome, entre l\'Esquilin et le Cælius, le plus grand jamais construit dans l\'Empire romain. Il est l\'une des plus grandes œuvres de l\'architecture et de l\'ingénierie romaines.', 75),
 (14, 10, 'Tour Eiffel', 'La Tour Eiffel est une tour de fer puddlé de 324 mètres de hauteur située à Paris, à l’extrémité nord-ouest du parc du Champ-de-Mars en bordure de la Seine dans le 7ème arrondissement. Son adresse officielle est 5, avenue Anatole-France.', 30),
 (15, 11, 'Puerta del Sol', 'La Puerta del Sol est située au cœur de Madrid, dans l\'arrondissement du Centre, à 800 m à l\'est du Palais royal et au nord-est de la Plaza Mayor.', 0),
-(16, 12, 'Marche By', 'Le Marché By est un quartier animé qui accueille des marchés fermiers en plein air et des épiceries spécialisées vendant du fromage canadien et du chocolat infusé à l\'érable. Il est également connu pour son art de rue coloré et ses magasins branchés proposant de l\'artisanat et des vêtements de créateurs locaux. ', 0),
 (17, 13, 'Hollywood Boulevard', 'Hollywood Boulevard est l’une des plus célèbres avenues du quartier de Hollywood, dans la ville américaine de Los Angeles en Californie. Haut lieu du tourisme de la ville, le boulevard s\'étend d\'Est en Ouest de Vermont Avenue jusqu\'à Sunset Boulevard.', 0),
 (18, 14, 'Château de Kumamoto', 'Le château de Kumamoto est un château en hauteur situé à Kumamoto dans la préfecture du même nom au Japon. C\'était un grand château extrêmement bien fortifié. Le tenshu a été partiellement rénové en 1960 mais les plus anciennes poutres de bois ont été laissées sur place.', 40),
 (19, 15, 'Wellington Cable Car', 'Le téléphérique de Wellington est un funiculaire à Wellington, en Nouvelle-Zélande, entre Lambton Quay, la principale rue commerçante, et Kelburn, une banlieue dans les collines surplombant le centre-ville, culminant à 120 m sur une longueur de 612 m. ', 50),
@@ -204,23 +202,6 @@ CREATE TABLE `reservation` (
   `heure` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Déchargement des données de la table `reservation`
---
-
-INSERT INTO `reservation` (`id_circuit`, `id_utilisateur`, `nb_place`, `date`, `heure`) VALUES
-(1, 2, 1, '2022-01-10', '10:18:21'),
-(3, 4, 1, '2022-03-02', '11:33:58'),
-(7, 4, 5, '2022-03-01', '19:57:14'),
-(7, 4, 5, '2022-03-12', '20:20:02'),
-(1, 10, 5, '2022-03-14', '19:09:19'),
-(2, 12, 4, '2022-03-14', '21:25:57'),
-(1, 15, 2, '2022-03-16', '15:52:43'),
-(6, 15, 5, '2022-03-16', '15:53:02'),
-(4, 6, 2, '2022-03-18', '10:34:13'),
-(1, 6, 2, '2022-03-18', '10:37:34'),
-(5, 6, 3, '2022-03-18', '10:42:33');
-
 -- --------------------------------------------------------
 
 --
@@ -230,8 +211,8 @@ INSERT INTO `reservation` (`id_circuit`, `id_utilisateur`, `nb_place`, `date`, `
 CREATE TABLE `utilisateur` (
   `id` int(11) NOT NULL,
   `role_admin` tinyint(1) NOT NULL,
-  `nom` varchar(30) NOT NULL,
-  `prenom` varchar(30) NOT NULL,
+  `nom` varchar(30) DEFAULT NULL,
+  `prenom` varchar(30) DEFAULT NULL,
   `date_naissance` date DEFAULT NULL,
   `login` varchar(30) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -243,16 +224,8 @@ CREATE TABLE `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id`, `role_admin`, `nom`, `prenom`, `date_naissance`, `login`, `email`, `mdp`) VALUES
-(1, 1, 'Dupond', 'Bertrand', '1975-01-11', 'Bertrand35000', 'bertrand@gmail.com', 'BertrandDeRennes'),
-(2, 0, 'Ardisson', 'Pierrick', '1960-12-07', 'Ardisonic', 'Ardisson@outlook.fr', 'ArdissonDuplateau'),
-(4, 0, 'Gastembourgeois', 'CharlesDeViconte', '1991-08-08', 'Charlos', 'Charle@outlook.fr', 'Leroicestmoi'),
-(6, 0, 'test', 'te', NULL, 'test2', 'test@test.com', '$2b$12$2gwrCIizx9.E2Lpm1GTO7.u6r4BeTNnON3phIHqeUqJMReyCNWqNu'),
-(7, 0, 'Toto', 'Toto', NULL, 'Toto', 'Toto@toto.com', '$2b$12$ynad8v/8wP2ml7s..c.eZu8MDyPVKbYrn2KnAg7XOIjUKAq9LTK3W'),
-(10, 0, 'test', 'test', NULL, 'test5', 'test5@test.com', '$2b$12$f3e.R2CJeNRT8p0AU2EkkO.o9zo4dwSmhoVJfh3iHtNDldQo9g3tW'),
-(11, 0, 'toto', 'toto', NULL, 'toto2', 'Toto2@toto.com', '$2b$12$d4aWkRVbXSxDCNsP5wBwmuhro4m75JT/KWak7MSvBoIClcuyUQQOW'),
-(12, 0, 'azerty', 'azerty', NULL, 'azerty', 'azerty@gmail.com', '$2b$12$gdqD4qmSaTel62i3pspUMOoTwbwtaR9RtPHfrigvxGFbSYo6WWu1W'),
-(14, 0, 't', 't', '2022-03-16', 't', 'test@test.com', '$2b$12$XQONfSwwb1eVvCrp4l9qY.vA9TkioEnM1WG5LGgWudgLz5FgbXpVO'),
-(15, 0, 'j', 'j', '2022-03-16', 'j', 'j@j.com', '$2b$12$JNZ6eITfNpO4VAfqdRnyDeaKPBrv5whb4E2EbKX7EL4mfNx/ZuFUe');
+(17, 1, 'Admin', 'Admin', '2022-03-21', 'Admin', 'admin@admin.com', '$2b$12$DUWaiMGbL69jtmHX.r2Fe.yMISuavbT6.WQRtQ1nV3px2m2dfvv66'),
+(18, 0, 'Client', 'Client', '2022-03-21', 'Client', 'client@client.com', '$2b$12$tulfgwlssH.PPY97KuyZfOSB7NAA6WpeIQez0C2TmuO7HueODMzoe');
 
 -- --------------------------------------------------------
 
@@ -380,7 +353,7 @@ ALTER TABLE `pays`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pour la table `ville`
