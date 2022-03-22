@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2555c87d-b373-4e0d-bcfc-a502d747c534" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/projet_transversal_bdd/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/projet_transversal_bdd/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet_transversal_bdd/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/projet_transversal_bdd/templates/index.html" afterDir="false" />
+    <list default="true" id="2555c87d-b373-4e0d-bcfc-a502d747c534" name="Changes" comment="changement variable">
+      <change beforePath="$PROJECT_DIR$/projet_transversal_bdd/templates/circuit_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/projet_transversal_bdd/templates/circuit_admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_transversal_bdd/templates/lieu_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/projet_transversal_bdd/templates/lieu_admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projet_transversal_bdd/templates/pays.html" beforeDir="false" afterPath="$PROJECT_DIR$/projet_transversal_bdd/templates/pays.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet_transversal_bdd/templates/utilisateur.html" beforeDir="false" afterPath="$PROJECT_DIR$/projet_transversal_bdd/templates/utilisateur.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projet_transversal_bdd/templates/ville.html" beforeDir="false" afterPath="$PROJECT_DIR$/projet_transversal_bdd/templates/ville.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,6 +92,37 @@
       <option name="presentableId" value="Default" />
       <updated>1647422651835</updated>
     </task>
+    <task id="LOCAL-00001" summary="css ville et pays admin">
+      <created>1647938386316</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1647938386316</updated>
+    </task>
+    <task id="LOCAL-00002" summary="changement variable">
+      <created>1647938414595</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1647938414595</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="css ville et pays admin" />
+    <MESSAGE value="changement variable" />
+    <option name="LAST_COMMIT_MESSAGE" value="changement variable" />
   </component>
 </project>

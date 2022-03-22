@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="./static/style_admin.css"/>
-<body>
 <header class="header">
+        <a href="{{url_for('index')}}"><button class="boutton">Site</button></a>
         <a href="{{url_for('circuit_admin')}}"><button class="boutton">Circuit</button></a>
         <a href="{{url_for('utilisateur')}}"><button class="boutton"> Utilisateur</button></a>
         <a href="{{url_for('lieu_admin')}}"><button class="boutton"> Lieu</button></a>
@@ -28,23 +28,19 @@
         <div class="conteneur-titre-ajouter modif-conteneur-titre">
             <p class="titre-ajouter "> Modifier ou supprimer une ville :</p>
         </div>
-    </div>
-    <form method="POST">
-        <div class="ajouter-form">
+<form method="POST">
+            <div class="ajouter-form">
             <div class="grouper-input-label">
-                {{ forml.csrf_token }}
-                {{ forml.id_ville_existant(value=your_list_element.0)}}
-                {{ forml.nom_ville_existant(value=your_list_element.1) }}
-                <select name="liopo">
-                    <option value={{your_list_element.2}}>{{your_list_element.2}}</option>
-                    {% for element in liste %}
-                    <option value={{element.0}}>{{element.0}}</option>
-                    {% endfor %}
-                </select>
-                <input type="submit" name="tut" value="GO"></input>
-                <input type="submit" name="tut" value="Delete"></input>
-            </div>
-        </div>
-    </form>
+    {{ forml.csrf_token }}
+    {{ forml.id_ville_existant(value=your_list_element.0)}}
+    {{ forml.nom_ville_existant(value=your_list_element.1) }}
+    <select name="liopo">
+        <option value={{your_list_element.2}}>{{your_list_element.2}}</option>
+        {% for element in liste %}
+        <option value={{element.0}}>{{element.0}}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" name="tut" value="GO"></input>
+    <input type="submit" name="tut" value="Delete"></input>
+</form>
 {% endfor %}
-</body>
