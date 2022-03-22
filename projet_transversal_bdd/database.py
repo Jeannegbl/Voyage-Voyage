@@ -104,10 +104,10 @@ class Database:
 
 if __name__ == '__main__':
     connexion_unique = Database.Instance()
-    query20 = " SELECT id FROM circuit WHERE nom = %s "
+    query_test = " SELECT id FROM circuit WHERE nom = %s "
     test = ('voyage',)
-    ui = connexion_unique.fetchall_arguments(query20, test)
-    print(ui)
+    test_reussi = connexion_unique.fetchall_arguments(query_test, test)
+    print(test_reussi)
 
 
 
