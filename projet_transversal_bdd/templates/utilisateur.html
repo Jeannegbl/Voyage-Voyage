@@ -1,0 +1,156 @@
+<link rel="stylesheet" href="./static/style_admin.css"/>
+<body>
+    <header class="header">
+        <a href="{{url_for('circuit_admin')}}"><button class="boutton">Circuit</button></a>
+        <a href="{{url_for('utilisateur')}}"><button class="boutton"> Utilisateur</button></a>
+        <a href="{{url_for('lieu_admin')}}"><button class="boutton"> Lieu</button></a>
+        <a href="{{url_for('ville')}}"><button class="boutton"> Ville</button></a>
+        <a href="{{url_for('pays')}}"><button  class="boutton"> Pays</button></a>
+    </header>
+    <div class="en-dessous-header">
+        <div class="conteneur-titre-ajouter">
+            <p class="titre-ajouter"> Ajoutez un utilisateur :</p>
+        </div>
+        <div class="conteneur-form">
+            <form method="POST" class="ajouter-form">
+                {{ ajouter_utilisateur_formulaire.csrf_token }}
+                <div class="grouper-input-label">
+                    <label for="ajouter_roleadmin_utilisateur">Role</label>
+                    {{ ajouter_utilisateur_formulaire.ajouter_roleadmin_utilisateur(class_="inp") }} 
+                </div>
+                <div class="grouper-input-label">
+                    <label for="ajouter_nom_utilisateur">Nom</label>
+                    {{ ajouter_utilisateur_formulaire.ajouter_nom_utilisateur(class_="inp") }} 
+                </div>
+                <div class="grouper-input-label">
+                    <label for="ajouter_prenom_utilisateur">Prenom</label>
+                    {{ ajouter_utilisateur_formulaire.ajouter_prenom_utilisateur(class_="inp") }}
+                </div>
+                <div class="grouper-input-label">
+                    <label for="ajouter_datenaissance_utilisateur">Date de naissance</label>
+                    {{ ajouter_utilisateur_formulaire.ajouter_datenaissance_utilisateur(class_="inp") }}
+                </div>
+                <div class="grouper-input-label">
+                    <label for="ajouter_login_utilisateur">Login</label>
+                    {{ ajouter_utilisateur_formulaire.ajouter_login_utilisateur(class_="inp") }}
+                </div>
+                <div class="grouper-input-label">
+                    <label for="ajouter_email_utilisateur">Email</label>
+                    {{ ajouter_utilisateur_formulaire.ajouter_email_utilisateur(class_="inp") }}
+                </div>
+                <div class="grouper-input-label">
+                    <label for="ajouter_mdp_utilisateur">Mot de passe</label>
+                    {{ ajouter_utilisateur_formulaire.ajouter_mdp_utilisateur(class_="inp") }}
+                </div>
+                <input type="submit" value="Ajouter"></input>
+            </form>
+        </div>
+        <div class="conteneur-titre-ajouter modif-conteneur-titre">
+            <p class="titre-ajouter "> Modifier ou supprimer un utilisateur :</p>
+        </div>
+        {% for utilisateur_reservation in liste_utilisateur_reservation %}
+        <div class="conteneur-form modif-conteneur-form">
+            <form method="POST" class="ajouter-form modif-ajouter-form">
+                {{ modifier_utilisateur_formulaire.csrf_token }}
+                {{ modifier_utilisateur_formulaire.modifier_id_utilisateur(value=utilisateur_reservation.0, class_="cacher") }} 
+                <div class="grouper-input-label">
+                    <label for="modifier_roleadmin_utilisateur">Role</label>
+                    {{ modifier_utilisateur_formulaire.modifier_roleadmin_utilisateur(value=utilisateur_reservation.1) }} 
+                </div>
+                <div class="grouper-input-label">
+                    <label for="modifier_nom_utilisateur">Nom</label>
+                    {{ modifier_utilisateur_formulaire.modifier_nom_utilisateur(value=utilisateur_reservation.2) }} 
+                </div>
+                <div class="grouper-input-label">
+                    <label for="modifier_prenom_utilisateur">Prenom</label>
+                    {{ modifier_utilisateur_formulaire.modifier_prenom_utilisateur(value=utilisateur_reservation.3) }} 
+                </div>
+                <div class="grouper-input-label">
+                    <label for="modifier_datenaissance_utilisateur">Date de naissance</label>
+                    {{ modifier_utilisateur_formulaire.modifier_datenaissance_utilisateur(value=utilisateur_reservation.4)}} 
+                </div>
+                <div class="grouper-input-label">
+                    <label for="modifier_login_utilisateur">Login</label>
+                    {{ modifier_utilisateur_formulaire.modifier_login_utilisateur(value=utilisateur_reservation.5) }} 
+                </div>
+                <div class="grouper-input-label">
+                    <label for="modifier_email_utilisateur">Email</label>
+                    {{ modifier_utilisateur_formulaire.modifier_email_utilisateur(value=utilisateur_reservation.6) }} 
+                </div>
+                <input type="submit" name="modifier_submit_utilisateur" value="Modifier">
+                <input type="submit" name="modifier_submit_utilisateur" value="Supprimer">
+            </form>
+        </div>
+        <div class="conteneur-titre-etape">
+            <p class="titre-etape">Ajouter, modifier ou supprimer des reservations : </p>
+        </div>
+        <form method="POST">
+            {{ modifier_reservation_formulaire.csrf_token }}
+            {% for n in liste_utile %}
+                {% if utilisateur_reservation[n] is defined %}
+                    <div class="conteneur-form modifi-conteneur-form">
+                        <div class="ajouter-form">
+                            <div class="grouper-input-label">
+                                <label for="modifier_circuit_reservation">Circuit</label>
+                                <select name="modifier_circuit_reservation{{utilisateur_reservation.0}}{{n}}">
+                                <option value="{{utilisateur_reservation[n][3]}}">{{utilisateur_reservation[n][3]}}</option>
+                                {% for nom_circuit in liste_nom_circuits %}
+                                    <option value="{{nom_circuit.0}}">{{nom_circuit.0}}</option>
+                                {% endfor %}
+                                </select>
+                            </div>
+                            {{ modifier_reservation_formulaire.fake(value="1", class_="cacher") }} 
+                            <div class="grouper-input-label">
+                                <label for="modifier_date_reservation">Date</label>
+                                <input name="modifier_date_reservation{{utilisateur_reservation.0}}{{n}}" type="date" value="{{utilisateur_reservation[n][4]}}"></input>
+                            </div>
+                            <div class="grouper-input-label">
+                                <label for="modifier_heure_reservation">Heure</label>
+                                <input name="modifier_heure_reservation{{utilisateur_reservation.0}}{{n}}" type="time" value="{{utilisateur_reservation[n][5]}}"></input>
+                            </div>
+                            <input name="modifier_id_circuit_reservation{{utilisateur_reservation.0}}{{n}}" type="number" class="cacher" value="{{utilisateur_reservation[n][0]}}"></input>
+                            <input name="modifier_id_utilisateur_reservation{{utilisateur_reservation.0}}{{n}}" type="number" class="cacher" value="{{utilisateur_reservation[n][1]}}"></input>
+                            <div class="grouper-input-label">
+                                <label for="modifier_nbplace_reservation">Nombre de place</label>
+                                <input name="modifier_nbplace_reservation{{utilisateur_reservation.0}}{{n}}" type="number"  value="{{utilisateur_reservation[n][2]}}"></input>
+                            </div>
+                            <input type="submit" name="modifier_submit_reservation" value="Modifier{{utilisateur_reservation.0}}{{n}}"></input>
+                            <input type='submit' name="modifier_submit_reservation" value="Supprimer{{utilisateur_reservation.0}}{{n}}"></input></br>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            </form>
+            <div class="conteneur-form modifi-conteneur-form">
+                <form method="POST" class="ajouter-form">
+                    {{ ajouter_reservation_formulaire.csrf_token }}
+                    <div class="grouper-input-label">
+                        <label for="ajouter_circuit_reservation">Circuit</label>
+                        <select name="ajouter_circuit_reservation">
+                            <option value=""></option>
+                            {% for nom_circuit in liste_nom_circuits %}
+                                    <option value="{{nom_circuit.0}}">{{nom_circuit.0}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    {{ ajouter_reservation_formulaire.faker(value="1", class_="cacher") }} 
+                    <div class="grouper-input-label">
+                        <label for="ajouter_date_reservation">Date</label>
+                    <input name="ajouter_date_reservation" type="date"></input>
+                    </div>
+                    <div class="grouper-input-label">
+                        <label for="ajouter_heure_reservation">Heure</label>
+                    <input name="ajouter_heure_reservation" type="time"></input>
+                    </div>
+                    <div class="grouper-input-label">
+                        <label for="ajouter_nbplace_reservation">Nombre de place</label>
+                    <input name="ajouter_nbplace_reservation" type="number"></input>
+                    </div>
+                    <input name="ajouter_id_utilisateur_reservation" type="number" class="cacher" value={{utilisateur_reservation.0}}></input>
+                    <input type="submit" value="Ajouter"></input></br>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+

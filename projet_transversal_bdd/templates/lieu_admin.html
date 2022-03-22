@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="./static/style_admin.css"/>
+<body>
+    <header class="header">
+        <a href="{{url_for('circuit_admin')}}"><button class="boutton">Circuit</button></a>
+        <a href="{{url_for('utilisateur')}}"><button class="boutton"> Utilisateur</button></a>
+        <a href="{{url_for('lieu_admin')}}"><button class="boutton"> Lieu</button></a>
+        <a href="{{url_for('ville')}}"><button class="boutton"> Ville</button></a>
+        <a href="{{url_for('pays')}}"><button  class="boutton"> Pays</button></a>
+    </header>
+    <div class="en-dessous-header">
+        <div class="conteneur-titre-ajouter">
+            <p class="titre-ajouter"> Ajoutez un lieu :</p>
+        </div>
+        <div class="conteneur-form">
+            <form method="POST" class="ajouter-form">
+                {{ ajouter_lieu_formulaire.csrf_token }}
+                <div class="grouper-input-label">
+                    <label for="ajouter_label_lieu">Label</label>
+                    {{ ajouter_lieu_formulaire.ajouter_label_lieu(class_="inp") }} 
+                </div>
+                <div class="grouper-input-label">
+                    <label for="ajouter_description_lieu">Description</label>
+                    {{ ajouter_lieu_formulaire.ajouter_description_lieu(class_="inp") }} 
+                </div>
+                <div class="grouper-input-label">
+                    <label for="ajouter_prix_lieu">Prix</label>
+                    {{ ajouter_lieu_formulaire.ajouter_prix_lieu(class_="inp")}} 
+                </div>
+                <div class="grouper-input-label">
+                    <label for="ajouter_ville_lieu">Ville</label>
+                    <select name="ajouter_ville_lieu">
+                        <option value=""></option>
+                        {% for nom_ville in liste_nom_villes %}
+                        <option value="{{nom_ville.0}}">{{nom_ville.0}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <input type="submit" value="Ajouter"></input>
+            </form>
+        </div>
+        <div class="conteneur-titre-ajouter modif-conteneur-titre">
+            <p class="titre-ajouter "> Modifier ou supprimer un lieu :</p>
+        </div>
+        {% for lieu in liste_lieu %}
+        <div class="conteneur-form modif-conteneur-form">
+            <form method="POST" class="ajouter-form modif-ajouter-form">
+                {{ modifier_lieu_formulaire.csrf_token }}
+                {{ modifier_lieu_formulaire.modifier_id_lieu(value=lieu.0, class_="cacher")}}
+                <div class="grouper-input-label">
+                    <label for="modifier_label_lieu">Label</label>
+                    {{ modifier_lieu_formulaire.modifier_label_lieu(value=lieu.1) }} 
+                </div>
+                <div class="grouper-input-label">
+                    <label for="modifier_description_lieu">Description</label>
+                    {{ modifier_lieu_formulaire.modifier_description_lieu(value=lieu.2) }} 
+                </div>
+                <div class="grouper-input-label">
+                    <label for="modifier_prix_lieu">Prix</label>
+                    {{ modifier_lieu_formulaire.modifier_prix_lieu(value=lieu.3) }} 
+                </div>
+                <div class="grouper-input-label">
+                    <label for="modifier_ville_lieu">Ville</label>
+                    <select name="modifier_ville_lieu">
+                        <option value="{{lieu.4}}">{{lieu.4}}</option>
+                        {% for nom_ville in liste_nom_villes %}
+                        <option value="{{nom_ville.0}}">{{nom_ville.0}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <input type="submit" name="modifier_submit_lieu" value="Modifier"></input>
+                <input type="submit" name="modifier_submit_lieu" value="Supprimer"></input>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+</body>

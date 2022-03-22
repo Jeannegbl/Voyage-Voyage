@@ -1,0 +1,199 @@
+
+    <link rel="stylesheet" href="./static/style_admin.css"/>
+<body>
+    <!-- header avec les liens vers les differentes pages -->
+    <header class="header">
+        <a href="{{url_for('circuit_admin')}}"><button class="boutton">Circuit</button></a>
+        <a href="{{url_for('utilisateur')}}"><button class="boutton"> Utilisateur</button></a>
+        <a href="{{url_for('lieu_admin')}}"><button class="boutton"> Lieu</button></a>
+        <a href="{{url_for('ville')}}"><button class="boutton"> Ville</button></a>
+        <a href="{{url_for('pays')}}"><button  class="boutton"> Pays</button></a>
+    </header>
+    <div class="en-dessous-header">
+        <div class="conteneur-titre-ajouter">
+            <p class="titre-ajouter"> Ajoutez un circuit :</p>
+        </div>
+        <div class="conteneur-form">
+            <!-- formulaire pour ajouter un circuit -->
+            <form method="POST" class="ajouter-form">
+                {{ ajouter_circuit_formulaire.csrf_token }}
+                <div class="grouper-input-label">
+                    <label for="ajouter_nom_circuit">Nom</label>
+                    {{ ajouter_circuit_formulaire.ajouter_nom_circuit(class_="inp") }} 
+                </div>
+                <div class="grouper-input-label">
+                    <label for="ajouter_descriptif_circuit">Descriptif</label>
+                    {{ ajouter_circuit_formulaire.ajouter_descriptif_circuit(class_="inp") }}
+                </div>
+                <div class="grouper-input-label">
+                    <label for="ajouter_prix_circuit">Prix</label>
+                    {{ ajouter_circuit_formulaire.ajouter_prix_circuit(class_="inp") }}
+                </div>
+                <div class="grouper-input-label">
+                    <label for="ajouter_duree_circuit">Duree</label>
+                    {{ ajouter_circuit_formulaire.ajouter_duree_circuit(class_="inp") }}
+                </div>
+                <div class="grouper-input-label">
+                    <label for="ajouter_nbplace_circuit">Nombre de place</label>
+                    {{ ajouter_circuit_formulaire.ajouter_nbplace_circuit(class_="inp") }}
+                </div>
+                <div class="grouper-input-label">
+                    <label for="ajouter_datedepart_circuit">Date de depart</label>
+                    <input type="datetime-local" name="ajouter_datedepart_circuit"></input>
+                </div>
+                <div class="grouper-input-label">
+                    <label for="ajouter_datearrivee_circuit">Date d'arrivee</label>
+                    <input type="datetime-local" name="ajouter_datearrivee_circuit"></input>
+                </div>
+                <div class="grouper-input-label">
+                    <label for="ajouter_villedepart_circuit">Ville de depart</label>
+                    <select name="ajouter_villedepart_circuit" class="inp">
+                        <option value=""></option>
+                        {% for nom_ville in liste_nom_villes %}
+                        <option value={{nom_ville.0}}>{{nom_ville.0}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="grouper-input-label">
+                    <label for="ajouter_villearrivee_circuit">Ville d'arrivee</label>
+                    <select name="ajouter_villearrivee_circuit" class="inp">
+                        <option value=""></option>
+                        {% for nom_ville in liste_nom_villes %}
+                        <option value={{nom_ville.0}}>{{nom_ville.0}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <input type="submit" value="Ajouter"></input>
+            </form>
+        </div>
+        <div class="conteneur-titre-ajouter modif-conteneur-titre">
+            <p class="titre-ajouter "> Modifier ou supprimer un circuit :</p>
+        </div>
+        <!-- On utilise une boucle jinja 'for' afin d'afficher les circuits ligne par ligne sous forme de formulaire avec comme attribut 'value' les elements de notre liste-->
+        {% for circuit_etape in liste_circuit_etape %}
+        <div class="conteneur-form modif-conteneur-form">
+            <form method="POST" class="ajouter-form modif-ajouter-form">
+                {{ modifier_circuit_formulaire.csrf_token }}
+                {{ modifier_circuit_formulaire.modifier_id_circuit(value=circuit_etape.0, class_="cacher") }}
+                <div class="grouper-input-label">
+                    <label for="modifier_nom_circuit">Nom</label>
+                    {{ modifier_circuit_formulaire.modifier_nom_circuit(value=circuit_etape.1) }} 
+                </div>
+                <div class="grouper-input-label">
+                    <label for="modifier_descriptif_circuit">Descriptif</label>
+                    {{ modifier_circuit_formulaire.modifier_descriptif_circuit(value=circuit_etape.2) }} 
+                </div>
+                <div class="grouper-input-label">
+                    <label for="modifier_prix_circuit">Prix</label>
+                    {{ modifier_circuit_formulaire.modifier_prix_circuit(value=circuit_etape.3) }}
+                </div>
+                <div class="grouper-input-label"> 
+                    <label for="modifier_duree_circuit">Duree</label>
+                    {{ modifier_circuit_formulaire.modifier_duree_circuit(value=circuit_etape.4) }}
+                </div>
+                <div class="grouper-input-label">
+                    <label for="modifier_nbplace_circuit">Nombre de place</label>
+                    {{ modifier_circuit_formulaire.modifier_nbplace_circuit(value=circuit_etape.5) }}
+                </div>
+                <div class="grouper-input-label">
+                    <label for="modifier_datedepart_circuit">Date de depart</label>
+                    <input type="datetime-local" name="modifier_datedepart_circuit" value="{{ circuit_etape.6 }}"></input>
+                </div>
+                <div class="grouper-input-label">
+                    <label for="modifier_datearrivee_circuit">Date d'arrivee</label>
+                    <input type="datetime-local" name="modifier_datearrivee_circuit" value="{{ circuit_etape.7 }}"></input>
+                </div>
+                <div class="grouper-input-label">
+                    <label for="modifier_villedepart_circuit">Ville de depart</label>
+                    <!-- On utilise une boucle 'for' jinja afin d'implementer uniquement les options possibles dans un select-->
+                    <select name="modifier_villedepart_circuit">
+                        <option value="{{circuit_etape.8}}">{{circuit_etape.8}}</option>
+                        {% for nom_ville in liste_nom_villes %}
+                        <option value="{{nom_ville.0}}">{{nom_ville.0}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="grouper-input-label">
+                    <label for="modifier_villearrivee_circuit">Ville d'arrivee</label>
+                    <!-- On utilise une boucle 'for' jinja afin d'implementer uniquement les options possibles dans un select-->
+                    <select name="modifier_villearrivee_circuit">
+                        <option value="{{circuit_etape.9}}">{{circuit_etape.9}}</option>
+                        {% for nom_ville in liste_nom_villes %}
+                        <option value="{{nom_ville.0}}">{{nom_ville.0}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <input type="submit" name="modifier_submit_circuit" value="Modifier"></input>
+                <input type="submit" name="modifier_submit_circuit" value="Supprimer"></input>
+            </form>
+        </div>
+        <div class="conteneur-titre-etape">
+            <p class="titre-etape">Ajouter, modifier ou supprimer des etapes : </p>
+        </div>
+        <form method="POST" class="">
+            <!-- On utilise la liste 'utile' creer dans le python afin d'afficher pour chaques circuit les etapes correspondantes sous forme de formulaire, si elles existent, 
+                de plus on creer dans l'attribut name un 'id' permettant d'indentifier chaques formulaire d'etape, cet 'id' est creer de cette maniere 'id du cricuit + 
+                valeur de n dans liste_utile'-->
+            {{ modifier_etape_formulaire.csrf_token }}
+            {% for n in liste_utile %}
+                {% if circuit_etape[n] is defined %}
+                    <div class="conteneur-form modifi-conteneur-form">
+                        <div class="ajouter-form">
+                            <div class="grouper-input-label">
+                                <label for="modifier_lieu_etape">Lieu</label>
+                                <!-- On utilise une boucle 'for' jinja afin d'implementer uniquement les options possibles dans un select-->
+                                <select name="modifier_lieu_etape{{circuit_etape.0}}{{n}}">
+                                <option value="{{circuit_etape[n][2]}}">{{circuit_etape[n][2]}}</option>
+                                {% for label_lieu in liste_label_lieux %}
+                                    <option value="{{label_lieu.0}}">{{label_lieu.0}}</option>
+                                {% endfor %}
+                                </select>
+                            </div>
+                            {{ modifier_etape_formulaire.modifier_duree_etape1(value=circuit_etape[n][3], class_="cacher") }} 
+                            <div class="grouper-input-label">
+                                <label for="modifier_duree_etape">Duree</label>
+                                <input name="modifier_duree_etape{{circuit_etape.0}}{{n}}" type="text" value={{circuit_etape[n][3]}}></input>
+                            </div>
+                            <div class="grouper-input-label">
+                                <label for="modifier_date_etape">Date</label>
+                                <input name="modifier_date_etape{{circuit_etape.0}}{{n}}" type="datetime-local" value="{{circuit_etape[n][4]}}"></input>
+                             </div>
+                            <input name="modifier_id_circuit_etape{{circuit_etape.0}}{{n}}" type="text" class="cacher" value={{circuit_etape[n][0]}}></input>
+                            <input name="modifier_ordre_etape{{circuit_etape.0}}{{n}}" type="text" class="cacher" value={{circuit_etape[n][1]}}></input>
+                            <input  type="submit"  name="modifier_submit_etape" value="Modifier{{circuit_etape.0}}{{n}}"></input>
+                            <input type='submit' name="modifier_submit_etape" value="Supprimer{{circuit_etape.0}}{{n}}"></input></br>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            </form>
+            <div class="conteneur-form modifi-conteneur-form">
+                <!-- formulaire pour ajouter une etape -->
+                <form method="POST" class="ajouter-form">
+                {{ ajouter_etape_formulaire.csrf_token }}
+                <div class="grouper-input-label">
+                    <label for="ajouter_lieu_etape">Lieu</label>
+                    <!-- On utilise une boucle 'for' jinja afin d'implementer uniquement les options possibles dans un select-->
+                    <select name="ajouter_lieu_etape">
+                        <option value=""></option>
+                        {% for label_lieu in liste_label_lieux %}
+                                <option value="{{label_lieu.0}}">{{label_lieu.0}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                    {{ ajouter_etape_formulaire.ajouter_duree_etape1(value="1", class_="cacher") }} 
+                <div class="grouper-input-label">
+                    <label for="ajouter_duree_etape">Duree</label>
+                    <input name="ajouter_duree_etape" type="text"></input>
+                </div>
+                <div class="grouper-input-label">
+                    <label for="ajouter_date_etape">Date</label>
+                    <input name="ajouter_date_etape" type="datetime-local"></input>
+                </div>
+                    <input name="ajouter_id_circuit_etape" type="text" class="cacher" value={{circuit_etape.0}}></input>
+                    <input type="submit" value="Ajouter"></input></br>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+<body>

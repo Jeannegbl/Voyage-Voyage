@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="./static/style.css"/>
+<form method="POST">
+    {{ form.csrf_token }}
+    {{ form.nom_ville.label }} {{ form.nom_ville(size=20) }} 
+    <select name="liop">
+        <option value=""></option>
+        {% for element in liste %}
+        <option value={{element.0}}>{{element.0}}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="GO"></input>
+</form>
+{% for your_list_element in your_list %}
+<form method="POST">
+    {{ forml.csrf_token }}
+    {{ forml.id_ville_existant(value=your_list_element.0)}}
+    {{ forml.nom_ville_existant(value=your_list_element.1) }} 
+    <select name="liopo">
+        <option value={{your_list_element.2}}>{{your_list_element.2}}</option>
+        {% for element in liste %}
+        <option value={{element.0}}>{{element.0}}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" name="tut" value="GO"></input>
+    <input type="submit" name="tut" value="Delete"></input>
+</form>
+{% endfor %}

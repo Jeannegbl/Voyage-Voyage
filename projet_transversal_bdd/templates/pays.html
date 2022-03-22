@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="./static/style.css"/>
+<form method="POST">
+    {{ form.csrf_token }}
+    {{ form.nom_pays.label }} {{ form.nom_pays(size=20) }} 
+    <input type="submit" value="GO"></input>
+</form>
+{% for your_list_element in your_list %}
+<form method="POST">
+    {{ forml.csrf_token }}
+    {{ forml.id_pays_existant(value=your_list_element.0)}}
+    {{ forml.nom_pays_existant(value=your_list_element.1) }} 
+    <input type="submit" name="tu" value="GO"></input>
+    <input type="submit" name="tu" value="Delete"></input>
+</form>
+{% endfor %}
