@@ -689,8 +689,8 @@ def pays():
                 pays_nom_existant = request.form['nom_pays_existant']
                 pays_id_existant = request.form['id_pays_existant']
                 query41 = "DELETE FROM pays WHERE id = %s "
-                pute = (pays_id_existant,)
-                connexion_unique.commit(query41, pute)
+                id = (pays_id_existant,)
+                connexion_unique.commit(query41, id)
                 return redirect(url_for('pays'))
 
         return render_template('/pays.html', form=form, your_list=yio, forml=forml)

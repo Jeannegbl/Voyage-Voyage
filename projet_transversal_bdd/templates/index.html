@@ -26,7 +26,7 @@
             {% endif %}
             <!--si celui qui se connecte est un admin, il à un bouton en plus-->
             {% if role == 1 %}
-                <input class="bouton bouton-header bouton-header-gauche" type="button" value="Admin" onclick="">
+                <input class="bouton bouton-header bouton-header-gauche" type="button" value="Admin" onclick="window.location.href='{{url_for('utilisateur')}}';">
             {% endif %}
         </header>
         <!--contenu de la section qui change entre toute les pages-->

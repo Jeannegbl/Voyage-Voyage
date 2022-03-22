@@ -1,27 +1,50 @@
-<link rel="stylesheet" href="./static/style.css"/>
-<form method="POST">
-    {{ form.csrf_token }}
-    {{ form.nom_ville.label }} {{ form.nom_ville(size=20) }} 
-    <select name="liop">
-        <option value=""></option>
-        {% for element in liste %}
-        <option value={{element.0}}>{{element.0}}</option>
-        {% endfor %}
-    </select>
-    <input type="submit" value="GO"></input>
-</form>
-{% for your_list_element in your_list %}
-<form method="POST">
-    {{ forml.csrf_token }}
-    {{ forml.id_ville_existant(value=your_list_element.0)}}
-    {{ forml.nom_ville_existant(value=your_list_element.1) }} 
-    <select name="liopo">
-        <option value={{your_list_element.2}}>{{your_list_element.2}}</option>
-        {% for element in liste %}
-        <option value={{element.0}}>{{element.0}}</option>
-        {% endfor %}
-    </select>
-    <input type="submit" name="tut" value="GO"></input>
-    <input type="submit" name="tut" value="Delete"></input>
-</form>
+<link rel="stylesheet" href="./static/style_admin.css"/>
+<body>
+<header class="header">
+        <a href="{{url_for('circuit_admin')}}"><button class="boutton">Circuit</button></a>
+        <a href="{{url_for('utilisateur')}}"><button class="boutton"> Utilisateur</button></a>
+        <a href="{{url_for('lieu_admin')}}"><button class="boutton"> Lieu</button></a>
+        <a href="{{url_for('ville')}}"><button class="boutton"> Ville</button></a>
+        <a href="{{url_for('pays')}}"><button  class="boutton"> Pays</button></a>
+    </header>
+    <div class="en-dessous-header">
+        <div class="conteneur-titre-ajouter">
+            <p class="titre-ajouter"> Ajoutez une ville :</p>
+        </div>
+        <div class="conteneur-form">
+            <form method="POST" class="ajouter-form">
+            {{ form.csrf_token }}
+            {{ form.nom_ville.label }} {{ form.nom_ville(size=20) }}
+                <select name="liop">
+                    <option value=""></option>
+                    {% for element in liste %}
+                    <option value={{element.0}}>{{element.0}}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="GO"></input>
+            </form>
+        </div>
+        {% for your_list_element in your_list %}
+        <div class="conteneur-titre-ajouter modif-conteneur-titre">
+            <p class="titre-ajouter "> Modifier ou supprimer une ville :</p>
+        </div>
+    </div>
+    <form method="POST">
+        <div class="ajouter-form">
+            <div class="grouper-input-label">
+                {{ forml.csrf_token }}
+                {{ forml.id_ville_existant(value=your_list_element.0)}}
+                {{ forml.nom_ville_existant(value=your_list_element.1) }}
+                <select name="liopo">
+                    <option value={{your_list_element.2}}>{{your_list_element.2}}</option>
+                    {% for element in liste %}
+                    <option value={{element.0}}>{{element.0}}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" name="tut" value="GO"></input>
+                <input type="submit" name="tut" value="Delete"></input>
+            </div>
+        </div>
+    </form>
 {% endfor %}
+</body>
